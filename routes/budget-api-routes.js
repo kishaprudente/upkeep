@@ -58,4 +58,16 @@ module.exports = (app) => {
   });
 
   // put - /api/budgets/:id
+  app.put("/api/budgets", async (req, res) => {
+    try {
+      const updateBudget = await db.Budget.update(req.body, {
+        where: {
+          id: req.body.id,
+        },
+      });
+      res.json(updateBudget);
+    } catch {
+      throw new Error("Cannot update this budget");
+    }
+  });
 };
