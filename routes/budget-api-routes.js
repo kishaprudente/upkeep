@@ -14,7 +14,7 @@ module.exports = (app) => {
       });
       res.json(allBudgets);
     } catch {
-      throw new Error("Oh no! Cannot get all the budgets :(");
+      throw new Error("Cannot get all budgets");
     }
   });
   // get - /api/budgets/:id -> getting a single budget
@@ -27,9 +27,15 @@ module.exports = (app) => {
         include: [db.User],
       });
       res.json(oneBudget);
+    } catch {
+      throw new Error("Cannot get the budget");
     }
   });
   // post - /api/budgets
+  app.post("/api/budgets", async (req, res) => {
+    const newBudget = await db.Budget.create(req.body);
+    res.json(newBudget);
+  });
   // delete - /api/budgets/:id
   // put - /api/budgets/:id
 };
