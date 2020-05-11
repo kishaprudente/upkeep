@@ -55,4 +55,19 @@ module.exports = (app) => {
 			);
 		}
 	});
+	// update a transaction by id
+	app.put("/api/transactions/:id", async (req, res) => {
+		try {
+			const updateTransaction = await db.Transaction.update(req.body, {
+				where: {
+					id: req.body.id,
+				},
+			});
+			res.json(updateTransaction);
+		} catch (err) {
+			throw new Error(
+				"Unable to update this transaction at id: " + req.params.id
+			);
+		}
+	});
 };
