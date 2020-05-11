@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-	var Budget = sequelize.define("Budget", {
+	const Budget = sequelize.define("Budget", {
 		balance: {
 			type: DataTypes.DECIMAL,
 			allowNull: false,
@@ -13,6 +13,11 @@ module.exports = function (sequelize, DataTypes) {
 	Budget.associate = function (models) {
 		Budget.hasMany(models.Transaction, {
 			onDelete: "CASCADE",
+		});
+		Budget.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false,
+			},
 		});
 	};
 
