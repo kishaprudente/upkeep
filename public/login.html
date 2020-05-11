@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="fontawesome-free-5.13.0-web/css/v4-shims.min.css"
+    />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+  <!-- ======= Body ========= -->
+  <body>
+    <!-- ======= Header ========= -->
+    <header>
+      <section class="hero is-link">
+        <div class="hero-body">
+          <p class="title">Login to your <strong>UpKeep</strong></p>
+          <p class="subtitle">Welcom back our <strong> dear user </strong></p>
+        </div>
+      </section>
+    </header>
+    <!-- ======= Login table ========= -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2 class="has-text-centered title is-3 is-spaced">Login Form</h2>
+          <!-- ======= Bulma Font Awesom ========= -->
+          <div class="field">
+            <p class="control has-icons-left">
+              <input
+                class="input"
+                type="email"
+                placeholder="Email"
+                id="email-input"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input
+                class="input"
+                type="password"
+                placeholder="Password"
+                id="password-input"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <button class="button is-success">
+                Login
+              </button>
+            </p>
+          </div>
+          <br />
+          <p>Don't have an Account? Sign in now <a href="/">here</a></p>
+        </div>
       </div>
     </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-        <br />
-        <p>Or sign up <a href="/">here</a></p>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
-
-</body>
-
+    <!-- ======= Link to javaScript ========= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+  </body>
 </html>
