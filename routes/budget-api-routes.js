@@ -17,6 +17,7 @@ module.exports = (app) => {
       throw new Error("Cannot get all budgets");
     }
   });
+
   // get - /api/budgets/:id -> getting a single budget
   app.get("/api/budgets/:id", async (req, res) => {
     try {
@@ -31,11 +32,30 @@ module.exports = (app) => {
       throw new Error("Cannot get the budget");
     }
   });
+
   // post - /api/budgets
   app.post("/api/budgets", async (req, res) => {
-    const newBudget = await db.Budget.create(req.body);
-    res.json(newBudget);
+    try {
+      const newBudget = await db.Budget.create(req.body);
+      res.json(newBudget);
+    } catch (err) {
+      res.status(401).json(err);
+    }
   });
+
   // delete - /api/budgets/:id
+  app.delete("/api/budgets/:id", async (req, res) => {
+    try {
+      const deletBudget = await db.Budget.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.json(deleteBudget);
+    } catch {
+      throw new Error("Cannot delete this budget");
+    }
+  });
+
   // put - /api/budgets/:id
 };
