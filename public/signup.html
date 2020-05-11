@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>upkeep</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
@@ -22,11 +22,11 @@
   <header>
     <section class="hero is-link">
       <div class="hero-body">
-        <p class="title">
-          Sign Up
+        <p id="shadow" class="title has-text-centered title is-1">
+          upkeep
         </p>
-        <p class="subtitle">
-          All you need to do <strong>is just register</strong> with us 
+        <p class="subtitle has-text-centered">
+          Budget money wisely
         </p>
       </div>
     </section>
@@ -37,6 +37,7 @@
       <div class="col-md-6 col-md-offset-3">
         <form class="signup">
           <div class="form-group">
+            <h2 class="has-text-centered title is-3 is-spaced">Sign up</h2>
             <label for="exampleInputEmail1">First Name:
             </label>
             <input type="first-name" class="form-control input is-link" id="first-name-input" placeholder="First name">
@@ -55,7 +56,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Confirm Password</label>
-            <input type="password" class="form-control input is-link" id="password-input" placeholder="Confirm Password">
+            <input type="password" class="form-control input is-link" id="confirm-password-input" placeholder="Confirm Password">
           </div>
           <div style="display: none" id="alert" class="alert alert-danger" role="alert">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -64,7 +65,7 @@
           <button type="register" class="button is-success is-rounded">Register</button>
         </form>
         <br />
-        <p>Already have an account?<a href="/login">Sign in now</a></p>
+        <p>Already have an account? <a href="/login">Sign in </a></p>
       </div>
     </div>
   </div>
