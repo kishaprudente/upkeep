@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS upkeep_db;
+
+CREATE DATABASE upkeep_db;
