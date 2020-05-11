@@ -31,4 +31,13 @@ module.exports = (app) => {
 			throw new Error("Unable to get single transaction data.");
 		}
 	});
+	// create a new transaction
+	app.post("/api/transactions", async (req, res) => {
+		try {
+			const newTransaction = await db.Transaction.create(req.body);
+			res.json(newTransaction);
+		} catch (err) {
+			res.status(401).json(err);
+		}
+	});
 };
