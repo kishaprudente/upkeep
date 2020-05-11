@@ -17,4 +17,18 @@ module.exports = (app) => {
 			throw new Error("Unable to get all transaction data.");
 		}
 	});
+	// get one transaction by id
+	app.get("/api/transactions/:id", async (req, res) => {
+		try {
+			const oneTransaction = await db.Transaction.findOne({
+				where: {
+					id: req.params.id,
+				},
+				include: [db.User, db.Budget],
+			});
+			res.json(oneTransaction);
+		} catch (err) {
+			throw new Error("Unable to get single transaction data.");
+		}
+	});
 };
