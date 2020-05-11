@@ -24,6 +24,7 @@ app.use(passport.session());
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
+require("./routes/budget-api-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function () {
