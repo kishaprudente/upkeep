@@ -40,4 +40,19 @@ module.exports = (app) => {
 			res.status(401).json(err);
 		}
 	});
+	// delete a transaction by id
+	app.delete("/api/transactions/:id", async (req, res) => {
+		try {
+			const deleteTransaction = await db.Transaction.destroy({
+				where: {
+					id: req.params.id,
+				},
+			});
+			res.json(deleteTransaction);
+		} catch (err) {
+			throw new Error(
+				"Unable to delete this transaction at id: " + req.params.id
+			);
+		}
+	});
 };
