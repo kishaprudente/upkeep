@@ -1,110 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>upkeep</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="fontawesome-free-5.13.0-web/css/v4-shims.min.css"
+    />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="stylesheets/signup.css" />
+  </head>
 
-<head>
-  <title>upkeep</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-  <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css">
-  <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/v4-shims.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/signup.css">
-</head>
+  <!-- ======= Body ========= -->
 
-<!-- ======= Body ========= -->
+  <body>
+    <!-- ======= Header ========= -->
 
-<body>
-
-  <!-- ======= Header ========= -->
-
-  <header>
-    <section class="hero is-link">
-      <div class="hero-body">
-        <p id="shadow" class="title has-text-centered title is-1">
-          upkeep
-        </p>
-        <p class="subtitle has-text-centered">
-          Budget money wisely
-        </p>
-      </div>
-    </section>
-  </header>
-<!-- ======= Register table ========= -->
-  <div id="col" class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <form class="signup">
-          <div class="form-group">
-            <h2 class="has-text-centered title is-3 is-spaced">Sign up</h2>
-            <label for="exampleInputEmail1">First Name: </label>
-            <div class="control has-icons-left">
-            <input type="first-name" class="form-control input is-link" id="first-name-input" placeholder="First name">
-            <span class="icon is-small is-left">
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
-            </span>
-          </div>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Last Name:</label>
-            <div class="control has-icons-left">
-            <input type="last-name" class="form-control input is-link" id="last-name-input" placeholder="Last Name">
-            <span class="icon is-small is-left">
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
-            </span>
-          </div>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <div class="control has-icons-left">
-            <input type="email" class="form-control input is-link" id="email-input" placeholder="Email">
-            <span class="icon is-small is-left">
-              <i class="fa fa-envelope-open" aria-hidden="true"></i>
-            </span>
-          </div>
-
-
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Password</label>
-            <div class="control has-icons-left">
-
-            <input type="password" class="form-control input is-link" id="password-input" placeholder="Password">
-            <span class="icon is-small is-left">
-              <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-            </span>
-
-          </div>
-          </div>
-          <div class="form-group">
-
-            <label for="exampleInputPassword1">Confirm Password</label>
-            <div class="control has-icons-left">
-            <input type="password" class="form-control input is-link" id="confirm-password-input" placeholder="Confirm Password">
-            <span class="icon is-small is-left">
-              <i class="fa fa-lock" aria-hidden="true"></i>
-            </span>
-          </div>
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="register" class="button is-success is-rounded">Register</button>
-        </form>
-        <br />
-        <p>Already have an account? <a href="/login">Sign in </a></p>
+    <header>
+      <section class="hero is-link">
+        <div class="hero-body">
+          <p id="shadow" class="title has-text-centered title is-1">
+            upkeep
+          </p>
+          <p class="subtitle has-text-centered">
+            Budget money wisely
+          </p>
+        </div>
+      </section>
+    </header>
+    <!-- ======= Register table ========= -->
+    <div id="col" class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <form class="signup">
+            <div class="form-group">
+              <h2 class="has-text-centered title is-3 is-spaced">Sign up</h2>
+              <label for="exampleInputEmail1">First Name: </label>
+              <div class="control has-icons-left">
+                <input
+                  type="first-name"
+                  class="form-control input is-link"
+                  id="first-name-input"
+                  placeholder="First name"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Last Name:</label>
+              <div class="control has-icons-left">
+                <input
+                  type="last-name"
+                  class="form-control input is-link"
+                  id="last-name-input"
+                  placeholder="Last Name"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <div class="control has-icons-left">
+                <input
+                  type="email"
+                  class="form-control input is-link"
+                  id="email-input"
+                  placeholder="Email"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Password</label>
+              <div class="control has-icons-left">
+                <input
+                  type="password"
+                  class="form-control input is-link"
+                  id="password-input"
+                  placeholder="Password"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <div class="control has-icons-left">
+                <input
+                  type="password"
+                  class="form-control input is-link"
+                  id="confirm-password-input"
+                  placeholder="Confirm Password"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div
+              style="display: none;"
+              id="alert"
+              class="alert alert-danger"
+              role="alert"
+            >
+              <span
+                class="glyphicon glyphicon-exclamation-sign"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Error:</span> <span class="msg"></span>
+            </div>
+            <button type="register" class="button is-success is-rounded">
+              Register
+            </button>
+          </form>
+          <br />
+          <p>Already have an account? <a href="/login">Sign in </a></p>
+        </div>
       </div>
     </div>
-  </div>
 
+    <!-- ======= Links ========= -->
 
-<!-- ======= Links ========= -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
+  </body>
 </html>

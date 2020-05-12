@@ -9,6 +9,8 @@ module.exports = (app) => {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
+      first_name: req.user.first_name,
+      last_name: req.user.last_name,
       email: req.user.email,
       id: req.user.id,
     });
@@ -20,6 +22,8 @@ module.exports = (app) => {
   app.post("/api/signup", async (req, res) => {
     try {
       const newUser = await db.User.create({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
         email: req.body.email,
         password: req.body.password,
       });
