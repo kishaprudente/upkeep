@@ -2,7 +2,8 @@
 	"env": {
 		"browser": true,
 		"commonjs": true,
-		"node": true
+		"node": true,
+		"es6": true
 	},
 	"rules": {
 		"no-duplicate-case": "error",
@@ -25,9 +26,12 @@
 		"no-redeclare": "error",
 		"camelcase": "error",
 		"brace-style": "error",
-		"indent": ["error", 2],
+		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "double"],
 		"semi": ["error", "always"]
+	},
+	"parserOptions": {
+		"ecmaVersion": 2020
 	}
 }
