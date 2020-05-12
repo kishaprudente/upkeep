@@ -22,9 +22,11 @@ $(document).ready(function () {
 				email: email,
 				password: password,
 			});
-			window.location.replace("/members");
+			console.log("HELLO");
+			window.location.replace("/transaction");
+			console.log("sign up done");
 		} catch (err) {
-			handleLoginErr();
+			handleLoginErr(err);
 		}
 	}
 
@@ -50,6 +52,7 @@ $(document).ready(function () {
 			userData.email,
 			userData.password
 		);
+		console.log("USER DATA", userData);
 		// set values of inputs to empty
 		firstNameInput.val("");
 		lastNameInput.val("");

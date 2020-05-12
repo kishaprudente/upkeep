@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>upkeep</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"/>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="stylesheets/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="stylesheets/login.css" />
-  </head>
+	<head>
+		<title>upkeep</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link href="stylesheets/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="stylesheets/login.css" />
+	</head>
 
-  <!-- ======= Body ========= -->
-  <body>
-    <!-- ======= Header ========= -->
-    <header>
-      <section class="hero is-link">
-        <div class="hero-body">
-          <p id="shadow" class="title has-text-centered title is-1">upkeep</p>
-        </div>
-      </section>
-    </header>
-    <!-- ======= Login table ========= -->
-    <div id="col" class="container">
-      <div id="main" class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h2 class="has-text-centered title is-3 is-spaced">Login</h2>
-          <!-- ======= Bulma Font Awesom ========= -->
-          <div class="field">
-            <p class="control has-icons-left">
-              <input
-                class="input is-link"
-                type="email"
-                placeholder="Email"
-                id="email-input"
-              />
-              <span class="icon is-small is-left">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control has-icons-left">
-              <input
-                class="input is-link"
-                type="password"
-                placeholder="Password"
-                id="password-input"
-              />
-              <span class="icon is-small is-left">
-                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control">
-              <button class="button is-success">
-                Login
-              </button>
-            </p>
-          </div>
-          <br />
-          <p>Don't have an Account? <a href="signup.html">Sign up</a></p>
-        </div>
-      </div>
-    </div>
+	<!-- ======= Body ========= -->
+	<body>
+		<!-- ======= Header ========= -->
+		<header>
+			<section class="hero is-link">
+				<div class="hero-body">
+					<p id="shadow" class="title has-text-centered title is-1">
+						upkeep
+					</p>
+				</div>
+			</section>
+		</header>
+		<!-- ======= Login table ========= -->
+		<div id="col" class="container">
+			<div id="main" class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<h2 class="has-text-centered title is-3 is-spaced">Login</h2>
+					<!-- ======= Bulma Font Awesom ========= -->
+					<form class="login">
+						<div class="field">
+							<p class="control has-icons-left">
+								<input
+									class="input is-link"
+									type="email"
+									placeholder="Email"
+									id="email-input"
+								/>
+								<span class="icon is-small is-left">
+									<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								</span>
+							</p>
+						</div>
+						<div class="field">
+							<p class="control has-icons-left">
+								<input
+									class="input is-link"
+									type="password"
+									placeholder="Password"
+									id="password-input"
+								/>
+								<span class="icon is-small is-left">
+									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+								</span>
+							</p>
+						</div>
+						<div class="field">
+							<p class="control">
+								<button class="button is-success">
+									Login
+								</button>
+							</p>
+						</div>
+					</form>
+					<br />
+					<p>Don't have an Account? <a href="signup.html">Sign up</a></p>
+				</div>
+			</div>
+		</div>
 
-    <!-- ======= Link to javaScript ========= -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
-  </body>
+		<!-- ======= Link to javaScript ========= -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</body>
 </html>

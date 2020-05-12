@@ -6,28 +6,34 @@ module.exports = (app) => {
 	// Using the passport.authenticate middleware with our local strategy.
 	// If the user has valid login credentials, send them to the members page.
 	// Otherwise the user will be sent an error
-	app.post("/api/login", passport.authenticate("local"), (req, res) => {
-		// Sending back a password, even a hashed password, isn't a good idea
-		res.json({
-			firstName: req.user.firstName,
-			lastName: req.user.lastName,
-			email: req.user.email,
-			id: req.user.id,
-		});
-	});
+	app.post(
+		"/api/login",
+		passport.authenticate("local", {
+			successRedirect: "/transaction",
+			failureRedirect: "/api/login",
+		}),
+		(req, res) => {
+			// Sending back a password, even a hashed password, isn't a good idea
+			res.json({
+				email: req.user.email,
+				id: req.user.id,
+			});
+		}
+	);
 
 	// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 	// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 	// otherwise send back an error
 	app.post("/api/signup", async (req, res) => {
 		try {
-			await db.User.create({
+			const newUser = await db.User.create({
 				firstName: req.body.firstName,
 				lastName: req.body.lastName,
 				email: req.body.email,
 				password: req.body.password,
 			});
 			res.redirect(307, "/api/login");
+			console.log("NEW USER IN DB", newUser);
 		} catch (err) {
 			res.status(401).json(err);
 		}
