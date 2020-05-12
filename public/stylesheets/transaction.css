@@ -21,6 +21,5 @@
     background-color: #ecf0f1;
   }
   #col{
-      min-height: calc(100vh - 251px - 48px);
+      min-height: calc(100vh - 211px - 48px);
   }
-  
