@@ -15,6 +15,7 @@ module.exports = {
 		database: "upkeep_test_db",
 		host: "127.0.0.1",
 		dialect: "mysql",
+		port: 3306,
 	},
 	production: {
 		dialect: "mysql",
