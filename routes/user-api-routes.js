@@ -9,7 +9,7 @@ module.exports = (app) => {
 	app.post(
 		"/api/login",
 		passport.authenticate("local", {
-			successRedirect: "/transaction",
+			successRedirect: "/dashboard",
 			failureRedirect: "/api/login",
 		}),
 		(req, res) => {
