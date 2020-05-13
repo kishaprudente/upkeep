@@ -23,7 +23,7 @@ $(document).ready(function () {
 				note: note,
 				UserId: UserID,
 			});
-			console.log("NEWWWW", newTransaction);
+			console.log(newTransaction);
 			// go back to dashboard
 			console.log("transaction added");
 		} catch (err) {
@@ -33,14 +33,16 @@ $(document).ready(function () {
 
 	transactionForm.on("submit", async function (event) {
 		event.preventDefault();
+		const userid = await getUserId();
+		console.log(userid);
+
 		const transactionData = {
 			purpose: purposeInput.val().trim(),
 			amount: amountInput.val().trim(),
 			note: noteInput.val().trim(),
-			UserId: await getUserId(),
+			UserId: userid,
 		};
-		console.log(transactionData);
-		// console.log("USER");
+		console.log("TRANSACTION DATA", transactionData);
 		const { purpose, amount, note, UserId } = transactionData;
 
 		if (!purpose || !amount) {
@@ -51,9 +53,8 @@ $(document).ready(function () {
 		amountInput.val("");
 		noteInput.val("");
 	});
-	// This file just does a GET request to figure out which user is logged in
-	// and updates the HTML on the page
-	$.get("/api/user_data").then(function (data) {
-		$(".member-name").text(data.email);
-	});
+
+	// add function to update transaction
+
+	// add function to delete transaction
 });
