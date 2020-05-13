@@ -60,7 +60,12 @@ module.exports = (app) => {
 	// update a transaction by id
 	app.put("/api/transactions/:id", async (req, res) => {
 		try {
-			const updateTransaction = await db.Transaction.update(req.body, {
+			const updated = {
+				purpose: req.body.purpose,
+				amount: req.body.amount,
+				note: req.body.note,
+			};
+			const updateTransaction = await db.Transaction.update(updated, {
 				where: {
 					id: req.body.id,
 				},

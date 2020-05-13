@@ -8,6 +8,7 @@ module.exports = {
 			"Users",
 			[
 				{
+					id: 1,
 					firstName: "Kevin",
 					lastName: "Wu",
 					email: "kevin@test.com",
