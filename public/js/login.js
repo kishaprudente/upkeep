@@ -11,7 +11,7 @@ $(document).ready(function () {
 				email: email,
 				password: password,
 			});
-			window.location.replace("/transaction");
+			window.location.replace("/dashboard");
 		} catch (err) {
 			// If there's an error, log the error
 			console.log(err);
