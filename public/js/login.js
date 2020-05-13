@@ -4,6 +4,11 @@ $(document).ready(function () {
 	const emailInput = $("input#email-input");
 	const passwordInput = $("input#password-input");
 
+	function handleLogInErr(err) {
+		$("#alert .msg").text(err);
+		$("#alert").fadeIn(500);
+	}
+
 	// loginUser does a post to our "api/login" route and if successful, redirects us the the members page
 	async function loginUser(email, password) {
 		try {
@@ -12,9 +17,9 @@ $(document).ready(function () {
 				password: password,
 			});
 			window.location.replace("/dashboard");
-		} catch (err) {
+		} catch {
 			// If there's an error, log the error
-			console.log(err);
+			handleLogInErr("Invalid credentials");
 		}
 	}
 
@@ -29,6 +34,7 @@ $(document).ready(function () {
 		console.log(userData);
 
 		if (!userData.email || !userData.password) {
+			handleLogInErr("Email or Password cannot be empty.");
 			return;
 		}
 
