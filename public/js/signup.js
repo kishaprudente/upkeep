@@ -7,8 +7,8 @@ $(document).ready(function () {
 	const passwordInput = $("input#password-input");
 	// const confirmPasswordInput = $("input#confirm-password-input");
 
-	function handleLoginErr(err) {
-		$("#alert .msg").text(err.responseJSON);
+	function handleSignUpErr(err) {
+		$("#alert .msg").text(err);
 		$("#alert").fadeIn(500);
 	}
 
@@ -25,8 +25,8 @@ $(document).ready(function () {
 			console.log("HELLO");
 			window.location.replace("/dashboard");
 			console.log("sign up done");
-		} catch (err) {
-			handleLoginErr(err);
+		} catch {
+			handleSignUpErr("Invalid entry. Try again ");
 		}
 	}
 
@@ -42,6 +42,7 @@ $(document).ready(function () {
 
 		// check if email and password has value
 		if (!userData.email || !userData.password) {
+			handleSignUpErr("Email or Password cannot be empty.");
 			return;
 		}
 
