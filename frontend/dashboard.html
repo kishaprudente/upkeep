@@ -37,7 +37,7 @@
           
               <div class="navbar-end">
                 <div class="navbar-item">
-                    <img src="iconmonstr-gear-1.svg" width="60" height="60"/>
+                    <!-- <img id="gear" src="iconmonstr-gear-1.svg" width="60" height="60"/> -->
                   <div class="buttons">
                     <a class="button is-light">
                       <strong>Sign up</strong>
@@ -51,17 +51,76 @@
             </div>
           </nav>
     
-        
+     <section id="sideSetting">
+      <div id="mySidenav" class="sidenav">
+        <a href="#" id="about"> <img id="gear" src="iconmonstr-gear-1.svg" width="60" height="60"/></a>
+      </div>
+     </section>   
     <section id="donutSection" class="section">
         <div class="container">
                     <canvas id="doughnut-chart" width="1500" height="900" ></canvas>
                 </div>
             </div>
     </section>
+    <div id="modalCard" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Settings</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body" id="cardBody">
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text input">
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-success">This username is available</p>
+          </div>
+          
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+            </div>
+            <p class="help is-danger">This email is invalid</p>
+          </div>
+          
+         
+        
+         
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
     </div>
     <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./modalSettings.js"></script>
+    <script src="./myChart.js"></script>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="./myChart.js"></script>
+  
 </html>

@@ -1,5 +1,6 @@
 html,body {
     background-color: rgb(95, 95, 95);
+    overflow: hidden;
 }
 #donutSection {
     width: 100vw;
@@ -25,6 +26,62 @@ html,body {
     justify-content: center;
 }
 
+#gear{
+    cursor: pointer;
+}
+
 #budgetTitle {
     font-size: xx-large;
 }
+
+
+#mySidenav a {
+    position: absolute; /* Position them relative to the browser window */
+    left: -70px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 100px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+  
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+  
+  /* The about link: 20px from the top with a green background */
+#about {
+    top: 50vh;
+    background-color: hsl(0, 0%, 21%);
+}
+
+#cardBody {
+      background-color:rgb(95, 95, 95) ;
+}
+
+.input {
+    background-color: hsl(0, 0%, 71%);
+    border-color: rgb(95, 95, 95);
+    color: white;
+}
+
+.modal-card-head {
+    background-color: hsl(0, 0%, 21%);
+    
+}
+
+.modal-card-title {
+    color: white;
+}
+
+.label {
+    color: white;
+}
+
+.modal-card-foot {
+    background-color: hsl(0, 0%, 21%);
+    
+}
+
