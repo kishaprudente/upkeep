@@ -1,5 +1,4 @@
 html,body {
-    background-color: rgb(95, 95, 95);
     overflow: hidden;
 }
 #donutSection {
@@ -31,9 +30,15 @@ html,body {
 }
 
 #budgetTitle {
+    text-shadow: 4px 4px 6px #161616;
     font-size: xx-large;
 }
-
+#image{
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+  
 
 #mySidenav a {
     position: absolute; /* Position them relative to the browser window */
