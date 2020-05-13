@@ -2,7 +2,11 @@
 "use strict";
 
 module.exports = {
-	up: (queryInterface, Sequelize) => {
+	up: async (queryInterface, Sequelize) => {
+		const [firstUser] = await queryInterface.sequelize.query(
+			"SELECT id FROM Users"
+		);
+		const { id } = firstUser;
 		return queryInterface.bulkInsert(
 			"Transactions",
 			[
@@ -10,6 +14,15 @@ module.exports = {
 					purpose: "Rent",
 					amount: "800.00",
 					note: "Rent for May",
+					UserId: id,
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					purpose: "Food",
+					amount: "60.00",
+					note: "Pizza Party",
+					UserId: id,
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
