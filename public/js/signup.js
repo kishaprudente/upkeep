@@ -23,7 +23,7 @@ $(document).ready(function () {
 				password: password,
 			});
 			console.log("HELLO");
-			window.location.replace("/transaction");
+			window.location.replace("/dashboard");
 			console.log("sign up done");
 		} catch (err) {
 			handleLoginErr(err);
