@@ -23,6 +23,7 @@
   "homepage": "https://github.com/kishaprudente/upkeep#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.1.0",
@@ -33,7 +34,6 @@
   "devDependencies": {
     "chai-http": "^4.3.0",
     "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
