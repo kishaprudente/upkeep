@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
 	Transaction.associate = function (models) {
 		Transaction.belongsTo(models.Budget, {
 			foreignKey: {
-				allowNull: false,
+				allowNull: true,
 			},
 		});
 		Transaction.belongsTo(models.User, {
