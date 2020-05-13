@@ -23,3 +23,8 @@ body {
 #col {
   min-height: calc(100vh - 251px - 48px);
 }
+#image{
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+}

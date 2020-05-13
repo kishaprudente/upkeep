@@ -13,6 +13,13 @@ new Chart(document.getElementById("doughnut-chart"), {
 					"#bb9b65",
 					"#b0bb65",
 				],
+				// borderColor:[
+				// 	"black",
+				// 	"black",
+				// 	"black",
+				// 	"black",
+				// 	"black"
+				// ],
 				data: [2478, 5267, 734, 784],
 			},
 		],
@@ -20,14 +27,16 @@ new Chart(document.getElementById("doughnut-chart"), {
 	options: {
 		responsive: true,
 		title: {
+			fontSize:35,
 			display: true,
 			text: "Monthly Budget",
-			fontColor: "white",
+			fontColor: "black",
 		},
 		legend: {
 			labels: {
+				fontSize:22,
 				// This more specific font property overrides the global property
-				fontColor: "white",
+				fontColor: "black",
 			},
 		},
 	},
