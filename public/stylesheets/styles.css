@@ -2,8 +2,9 @@ html,body {
     overflow: hidden;
 }
 #donutSection {
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
+    justify-self:center;
 }
 .centerDonut {
     width: 100%;
@@ -82,4 +83,9 @@ html,body {
     background-color: hsl(217, 71%, 53%)
     
 }
+#doughnut-chart{
+    height: 100%;
+    width: 100%;
+}
+
 

@@ -34,7 +34,7 @@ new Chart(document.getElementById("doughnut-chart"), {
 		},
 		legend: {
 			labels: {
-				fontSize:22,
+				fontSize:20,
 				// This more specific font property overrides the global property
 				fontColor: "black",
 			},
