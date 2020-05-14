@@ -61,19 +61,12 @@ html,body {
     top: 50vh;
     background-color: hsl(0, 0%, 21%);
 }
-
-#cardBody {
-      background-color:rgb(95, 95, 95) ;
-}
-
 .input {
-    background-color: hsl(0, 0%, 71%);
-    border-color: rgb(95, 95, 95);
     color: white;
 }
 
 .modal-card-head {
-    background-color: hsl(0, 0%, 21%);
+    background-color: hsl(217, 71%, 53%)
     
 }
 
@@ -86,7 +79,7 @@ html,body {
 }
 
 .modal-card-foot {
-    background-color: hsl(0, 0%, 21%);
+    background-color: hsl(217, 71%, 53%)
     
 }
 
