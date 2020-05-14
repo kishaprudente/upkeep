@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
 				isNumeric: true,
 			},
 		},
-		month: DataTypes.STRING,
+		month: DataTypes.DATE,
 	});
 
 	Budget.associate = function (models) {

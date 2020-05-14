@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./stylesheets/bulma-0.8.2/css/bulma.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="./stylesheets/styles.css">
+    <link rel="stylesheet" href="./stylesheets/slider.css"/>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css"/>
@@ -21,25 +22,15 @@
                   upkeep
                   </strong>
               </a>
-          
+<!--           
               <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
-            </div>
+            </div> -->
           
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  Home
-                </a>
-          
-                <a class="navbar-item">
-                  How to Use
-                </a>
-              </div>
-          
+            <div id="navbarBasicExample" class="navbar-menu">          
               <div class="navbar-end">
                 <div class="navbar-item">
                     <!-- <img id="gear" src="iconmonstr-gear-1.svg" width="60" height="60"/> -->
@@ -71,38 +62,49 @@
           <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body" id="cardBody">
+         
           <div class="field">
-            <div class="control has-icons-left has-icons-right">
-            <label class="label is-link has-text-black">Name</label>
-            <div class="control">
-              <input class="input has-text-grey-light is-link" type="text" placeholder="Text input">
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
-            </div>
+            <label class="label">Rent</label>
+      
+            <div class="range-slider" >
+              <input class="range-slider__range" id="rentSlider" type="range" value="0" min="0" max="3000" step="100">
+              <span class="range-slider__value" id="rentValue"></span>
             </div>
           </div>
+
           <div class="field">
-            <label class="label is-link has-text-black ">Username</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input has-text-grey-light is-link" type="text" placeholder="Text input">
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>          
+            <label class="label">Groceries</label>
+      
+            <div class="range-slider">
+              <input class="range-slider__range" id="groceriesSlider" type="range" value="0" min="0" max="500" step="10">
+              <span class="range-slider__value" id="groceriesValue"></span>
+            </div>
+          </div>
+          
           <div class="field">
-            <label class="label has-text-black">Email</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input has-text-grey-light is-link" type="email" placeholder="Email input">
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
+            <label class="label">Utilities</label>
+            <div class="range-slider">
+              <input class="range-slider__range" id="utilitiesSlider"type="range" value="0" min="0" max="500" step="10">
+              <span class="range-slider__value" id="utilitiesValue">0</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Savings</label>
+            <div class="range-slider">
+              <input class="range-slider__range" id="savingsSlider"type="range" value="0" min="0" max="3000" step="10">
+              <span class="range-slider__value" id="savingsValue">0</span>
+            </div>
+          </div>
+         
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success is-rounded">Save changes</button>
-          <button class="button is-success is-rounded">Cancel</button>
+          <button id="saveButton" class="button is-success">Save changes</button>
+          <button id="cancelButton" class="button">Cancel</button>
         </footer>
       </div>
     </div>
+
     </div>
     <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
