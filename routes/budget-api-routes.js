@@ -10,7 +10,7 @@ module.exports = (app) => {
 			}
 			const allBudgets = await db.Budget.findAll({
 				where: query,
-				include: [db.User],
+				include: [db.User, db.Transaction],
 			});
 			res.json(allBudgets);
 		} catch {
@@ -25,7 +25,7 @@ module.exports = (app) => {
 				where: {
 					id: req.params.id,
 				},
-				include: [db.User],
+				include: [db.User, db.Transaction],
 			});
 			res.json(oneBudget);
 		} catch {
