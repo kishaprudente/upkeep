@@ -1,3 +1,6 @@
+// const Dashboard = require("./dashboard");
+const dash = new Dashboard();
+
 Chart.defaults.global.responsive = true;
 var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 	type: "doughnut",
@@ -44,19 +47,21 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 	},
 });
 
-var rangeSlider = function () {
+var rangeSlider = async function () {
 	var slider = $(".range-slider"),
 		range = $(".range-slider__range"),
 		value = $(".range-slider__value");
 	$saveButton = $("#saveButton");
+	const purposes = await dash.addTotals();
 	//--------------------RENT--------------------------------
 	$rentSlider = $("#rentSlider");
 	$rentValue = $("#rentValue");
 
-	var rentValue = $rentSlider.attr("value");
+	console.log(purposes);
+	var rentValue = purposes[0];
 	$rentValue.html(rentValue);
 
-	outerDonut.data.datasets[0].data[0] = parseInt(rentValue);
+	outerDonut.data.datasets[1].data[0] = parseInt(rentValue);
 	outerDonut.update();
 
 	$rentSlider.on("input", function () {
@@ -150,20 +155,20 @@ var rangeSlider = function () {
 
 rangeSlider();
 
-$(document).ready(function () {
-	async function displayTotalBudget() {
-		try {
-			await $.get("/api/budgets", function (data) {
-				console.log(data);
-				console.log(data[0].balance);
-				outerDoughnut.options.title.text =
-					"$" +
-					data[0].balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			});
-		} catch (err) {
-			throw new err();
-		}
-		console.log(outerDoughnut.options.title.text);
-	}
-	displayTotalBudget();
-});
+// $(document).ready(function () {
+// 	async function displayTotalBudget() {
+// 		try {
+// 			await $.get("/api/budgets", function (data) {
+// 				console.log(data);
+// 				console.log(data[0].balance);
+// 				outerDoughnut.options.title.text =
+// 					"$" +
+// 					data[0].balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// 			});
+// 		} catch (err) {
+// 			throw new err();
+// 		}
+// 		console.log(outerDoughnut.options.title.text);
+// 	}
+// 	displayTotalBudget();
+// });
