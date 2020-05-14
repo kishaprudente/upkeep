@@ -34,12 +34,14 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 	options: {
 		responsive: true,
 		title: {
+			fontSize:30,
 			display: true,
 			text: "Monthly Budget",
 			fontColor: "black",
 		},
 		legend: {
 			labels: {
+				fontSize:15,
 				// This more specific font property overrides the global property
 				fontColor: "black",
 			},

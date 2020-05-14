@@ -11,8 +11,15 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css"/>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+
   </head>
   <body>
+
+
     <div class="main">
         <nav class=" navbar is-link" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -22,18 +29,19 @@
                   upkeep
                   </strong>
               </a>
-<!--           
-              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+             <!--<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-              </a>
-            </div> -->
+              </a>-->
+            </div> 
           
             <div id="navbarBasicExample" class="navbar-menu">          
               <div class="navbar-end">
                 <div class="navbar-item">
+
                     <!-- <img id="gear" src="iconmonstr-gear-1.svg" width="60" height="60"/> -->
+
                     <a id="log-out" class="button is-success is-rounded" href="/logout">
                         <strong>Log Out</strong>
                     </a>
@@ -42,7 +50,7 @@
               </div>
             </div>
           </nav>
-    
+    <!-- ================== Slider Settings=====================-->
      <section id="sideSetting">
       <div id="mySidenav" class="sidenav">
         <a href="#" id="about"> <img id="gear" src="./images/iconmonstr-gear-1.svg" width="60" height="60"/></a>
@@ -50,10 +58,12 @@
      </section>   
     <section id="donutSection" class="section">
         <div class="container">
-                    <canvas id="doughnut-chart" width="1500" height="900" ></canvas>
+                    <canvas id="doughnut-chart"  ></canvas>
                 </div>
             </div>
     </section>
+
+
     <div id="modalCard" class="modal">
       <div class="modal-background"></div>
       <div class="modal-card">
@@ -98,14 +108,125 @@
           </div>
          
         </section>
+
         <footer class="modal-card-foot">
           <button id="saveButton" class="button is-success">Save changes</button>
           <button id="cancelButton" class="button">Cancel</button>
         </footer>
       </div>
     </div>
-
     </div>
+
+    <!-- ================== Slider transaction =====================-->
+
+    <section id="sideTransaction">
+      <div id="mySide" class="sidenav">
+        <a href="#" id="position"> <img id="trans" src="./images/iconmonstr-gear-1.svg" width="50" height="50"/></a>
+      </div>
+     </section>   
+    <div id="modalTransaction" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Transaction</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body" id="cardBody">
+
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>Purpose</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+
+            <!--======Purpose going here ========-->
+
+              </div>
+            </div>
+          </div>
+         
+          <form class="transaction">
+              <div class="field">
+                <label class="label has-text-left title is-5">Amount</label>
+                <div class="control has-icons-left ">
+                  <input id="amount" class="input is-link" type="text" placeholder="Text input">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-dollar-sign"></i>
+                  </span>
+                </div>
+                <div class="field">
+                  <label class="label has-text-left title is-5">Note
+                  <span class="icon is-small is-left">
+                    <i class="far fa-comments"></i>
+                  </span>
+                </label>
+                  <div class="control">
+                    <textarea id="note" class="textarea is-link" placeholder="Textarea"></textarea>
+                  </div>
+                </div>
+                <hr>
+                <button id="budget" class="button is-medium is-fullwidth is-link">Add Budget</button>
+          </div>
+        </div>
+      </form>
+         
+        </section>
+
+        <footer class="modal-card-foot">
+        </footer>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- ================== Panel =====================-->
+
+    <div id="panel">
+      <article class="panel is-link has-text-centered ">
+        <p class="panel-heading">
+          Primary
+        </p>
+        <a class="panel-block is-active">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          bulma
+        </a>
+        <a class="panel-block">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          marksheet
+        </a>
+        <a class="panel-block">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          minireset.css
+        </a>
+        <a class="panel-block">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          jgthms.github.io
+        </a>
+      </article>
+    </div>
+  </div>
+
     <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

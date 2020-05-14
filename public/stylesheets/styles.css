@@ -1,11 +1,11 @@
-html,
+html{
+    width: 100%;
+    height: 100%;
+}
 body {
 	overflow: hidden;
 }
-#donutSection {
-	width: 100vw;
-	height: 90vh;
-}
+
 .centerDonut {
 	width: 100%;
 	height: 100%;
@@ -58,7 +58,7 @@ body {
 
 /* The about link: 20px from the top with a green background */
 #about {
-	top: 50vh;
+	top: 12%;
 	background-color: hsl(217, 71%, 53%);
 }
 .input {
@@ -79,4 +79,34 @@ body {
 
 .modal-card-foot {
 	background-color: hsl(217, 71%, 53%);
+}
+element.style {
+    display: block;
+    height: 478px;
+    width: 960px;
+}
+
+
+#mySide a {
+	position: absolute; /* Position them relative to the browser window */
+	left: -70px; /* Position them outside of the screen */
+	transition: 0.3s; /* Add transition on hover */
+	padding: 15px; /* 15px padding */
+	width: 100px; /* Set a specific width */
+	text-decoration: none; /* Remove underline */
+	font-size: 20px; /* Increase font size */
+	color: white; /* White text color */
+	border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+#position{
+    top: 25%;
+	background-color: hsl(217, 71%, 53%);
+
+}
+#mySide a:hover {
+	left: 0; /* On mouse-over, make the elements appear as they should */
+}
+.label:not(:last-child) {
+    margin-bottom: 0.5em;
+    margin-top: 20px;
 }
