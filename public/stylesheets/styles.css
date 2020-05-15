@@ -243,14 +243,48 @@ element.style {
 	#transactionContainer {
 		width: 50vw;
 	}
+	#logoutButton {
+		position: absolute; 
+		pointer-events: auto;
+		right: 7vw; /* Position them outside of the screen */
+		transition: 0.3s; /* Add transition on hover */
+		padding: 1px; /* 15px padding */
+		width: 20vw; /* Set a specific width */
+		text-decoration: none; /* Remove underline */
+		font-size: 16px; /* Increase font size */
+		font-weight: bolder;
+		border: solid;
+		border-color: white;
+		border-width: 3px;
+		border-radius: 50px;
+		color: white; /* White text color */
+		top: 83vh;
+		background-color: grey;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
+	}
+	#logoutButtonContainer {
+		display: inline-block;
+	}
+	
+	#logoutText {
+		color: black;
+		float: right;
+	}
+	
+	#transactionContainer {
+		width: 50vw;
+	}
 
 	#viewIcon {
 		float: left;
 	}
 
 	#viewText {
-		padding-top: 2px;
-		padding-left: 5px;
+
 		float: right;
 	}
 
