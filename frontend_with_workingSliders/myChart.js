@@ -24,12 +24,12 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
       title: {
         display: true,
         text: 'Monthly Budget',
-        fontColor: "white"
+        fontColor: "black"
       },
       legend: {
         labels: {
             // This more specific font property overrides the global property
-            fontColor: 'white'
+            fontColor: 'black'
         }
     }
     }
@@ -39,9 +39,6 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 
 
 var rangeSlider = function(){
-
-      
-
 
       $saveButton = $("#saveButton");
       const outerArray = outerDonut.data.datasets[0].data;

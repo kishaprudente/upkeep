@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="./stylesheets/slider.css"/>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css"/>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
@@ -45,10 +43,10 @@
                     <a id="log-out" class="button is-success is-rounded" href="/logout">
                         <strong>Log Out</strong>
                     </a>
-                  </div>
                 </div>
               </div>
             </div>
+
           </nav>
     <!-- ================== Slider Settings=====================-->
      <section id="sideSetting">
@@ -58,9 +56,8 @@
      </section>   
     <section id="donutSection" class="section">
         <div class="container">
-                    <canvas id="doughnut-chart"  ></canvas>
-                </div>
-            </div>
+          <canvas id="doughnut-chart"  ></canvas>
+        </div>
     </section>
 
 
@@ -69,53 +66,95 @@
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Settings</p>
-          <button class="delete" aria-label="close"></button>
+          <button id="closeButton" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body" id="cardBody">
          
           <div class="field">
+            <label class="label">Budget</label>
+              <div class="sliderContainer" >
+                <div class="sliderBudget" id="budgetSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="budgetValue"> 0 </span> </div>
+                </div>
+              </div>
+          </div>
+
+          
+          <div class="field">
             <label class="label">Rent</label>
-      
-            <div class="range-slider" >
-              <input class="range-slider__range" id="rentSlider" type="range" value="0" min="0" max="3000" step="100">
-              <span class="range-slider__value" id="rentValue"></span>
-            </div>
+              <div class="sliderContainer" >
+                <div class="slider" id="rentSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="rentValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
 
           <div class="field">
-            <label class="label">Groceries</label>
-      
-            <div class="range-slider">
-              <input class="range-slider__range" id="groceriesSlider" type="range" value="0" min="0" max="500" step="10">
-              <span class="range-slider__value" id="groceriesValue"></span>
-            </div>
+            <label class="label">Food</label>
+              <div class="sliderContainer" >
+                <div class="slider" id="foodSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="foodValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
           
           <div class="field">
             <label class="label">Utilities</label>
-            <div class="range-slider">
-              <input class="range-slider__range" id="utilitiesSlider"type="range" value="0" min="0" max="500" step="10">
-              <span class="range-slider__value" id="utilitiesValue">0</span>
-            </div>
+              <div class="sliderContainer" >
+                <div class="slider" id="utilitiesSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="utilitiesValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
 
           <div class="field">
             <label class="label">Savings</label>
-            <div class="range-slider">
-              <input class="range-slider__range" id="savingsSlider"type="range" value="0" min="0" max="3000" step="10">
-              <span class="range-slider__value" id="savingsValue">0</span>
-            </div>
+              <div class="sliderContainer" >
+                <div class="slider" id="savingsSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="savingsValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
-         
-        </section>
 
+          <div class="field">
+            <label class="label">Personal</label>
+              <div class="sliderContainer" >
+                <div class="slider" id="personalSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="personalValue"> 0 </span> </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Miscellaneous</label>
+              <div class="sliderContainer" >
+                <div class="slider" id="miscellSlider">
+                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
+                  <div class="valueContainer"><span id="miscellValue"> 0 </span> </div>
+                </div>
+              </div>
+          </div>
+
+         
         <footer class="modal-card-foot">
-          <button id="saveButton" class="button is-success">Save changes</button>
-          <button id="cancelButton" class="button">Cancel</button>
+          <div id="modalFoot">
+            <section>
+            <button id="saveButton" class="button is-success">Save changes</button>
+            <button id="cancelButton" class="button">Cancel</button>
+            </section>
+
+
+          </div>
         </footer>
       </div>
     </div>
-    </div>
+   
 
     <!-- ================== Slider transaction =====================-->
 
@@ -230,6 +269,8 @@
     <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="./js/modalSettings.js"></script>
     <script src="./js/dashboard.js"></script>
     <script src="./js/myChart.js"></script>
