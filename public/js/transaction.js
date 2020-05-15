@@ -143,7 +143,10 @@ $(document).ready(function () {
 		try {
 			console.log(event.target);
 			if (event.target.matches("button")) {
-				var transactionId = $(event.target).parent().parent().attr("data-id");
+				var transactionId = $(event.target)
+					.parent()
+					.parent()
+					.attr("data-id");
 				console.log(transactionId);
 				await $.ajax({
 					method: "DELETE",

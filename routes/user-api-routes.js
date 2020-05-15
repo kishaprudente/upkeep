@@ -33,7 +33,6 @@ module.exports = (app) => {
 				password: req.body.password,
 			});
 			res.redirect(307, "/api/login");
-			console.log("NEW USER IN DB", newUser);
 		} catch (err) {
 			res.status(401).json(err);
 		}
