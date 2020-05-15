@@ -7,29 +7,28 @@
     <link rel="stylesheet" href="./stylesheets/bulma-0.8.2/css/bulma.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="./stylesheets/styles.css">
-    <link rel="stylesheet" href="./stylesheets/slider.css"/>
+    <link rel="stylesheet" href="./stylesheets/slider.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css"/>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-
+    <link
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous"
+    >
   </head>
-  <body>
-
-
-    <div class="main">
-        <nav class=" navbar is-link" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="#">
-                <img id="image" src="./images/clipart838442.png" alt="upkeep">
-                <strong id="budgetTitle">
-                  upkeep
-                  </strong>
-              </a>
-             <!--<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <body>
+        <div class="main">
+            <nav class=" navbar is-link" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <img id="image" src="./images/clipart838442.png" alt="upkeep">
+                        <strong id="budgetTitle">
+                            upkeep
+                        </strong>
+                    </a>
+                    <!--<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -39,16 +38,13 @@
             <div id="navbarBasicExample" class="navbar-menu">          
               <div class="navbar-end">
                 <div class="navbar-item">
-
-                    <!-- <img id="gear" src="iconmonstr-gear-1.svg" width="60" height="60"/> -->
-
                     <a id="log-out" class="button is-success is-rounded" href="/logout">
                         <strong>Log Out</strong>
                     </a>
-                  </div>
                 </div>
               </div>
             </div>
+
           </nav>
     <!-- ================== Slider Settings=====================-->
      <section id="sideSetting">
@@ -58,67 +54,93 @@
      </section>   
     <section id="donutSection" class="section is-mobile">
         <div class="container">
-                    <canvas id="doughnut-chart"  ></canvas>
-                </div>
-            </div>
+          <canvas id="doughnut-chart"  ></canvas>
+        </div>
     </section>
-
 
     <div id="modalCard" class="modal">
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Settings</p>
-          <button class="delete" aria-label="close"></button>
+          <button id="closeButton" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body" id="cardBody">
          
           <div class="field">
+            <label class="label">Budget</label>
+              <div class="sliderContainer" >
+                <div class="sliderBudget" id="budgetSlider">
+                  <div class="valueContainer"><span id="budgetValue"> 0 </span> </div>
+                </div>
+              </div>
+          </div>
+
+          
+          <div class="field">
             <label class="label">Rent</label>
-      
-            <div class="range-slider" >
-              <input class="range-slider__range" id="rentSlider" type="range" value="0" min="0" max="3000" step="100">
-              <span class="range-slider__value" id="rentValue"></span>
-            </div>
+              <div class="sliderContainer" >
+                <div class="slider" id="rentSlider">
+                  <div class="valueContainer"><span id="rentValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
 
           <div class="field">
-            <label class="label">Groceries</label>
-      
-            <div class="range-slider">
-              <input class="range-slider__range" id="groceriesSlider" type="range" value="0" min="0" max="500" step="10">
-              <span class="range-slider__value" id="groceriesValue"></span>
-            </div>
+            <label class="label">Food</label>
+              <div class="sliderContainer" >
+                <div class="slider" id="foodSlider">
+                  <div class="valueContainer"><span id="foodValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
           
           <div class="field">
             <label class="label">Utilities</label>
-            <div class="range-slider">
-              <input class="range-slider__range" id="utilitiesSlider"type="range" value="0" min="0" max="500" step="10">
-              <span class="range-slider__value" id="utilitiesValue">0</span>
-            </div>
+              <div class="sliderContainer" >
+                <div class="slider" id="utilitiesSlider">
+                  <div class="valueContainer"><span id="utilitiesValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
 
           <div class="field">
             <label class="label">Savings</label>
-            <div class="range-slider">
-              <input class="range-slider__range" id="savingsSlider"type="range" value="0" min="0" max="3000" step="10">
-              <span class="range-slider__value" id="savingsValue">0</span>
-            </div>
+              <div class="sliderContainer" >
+                <div class="slider" id="savingsSlider">
+                  <div class="valueContainer"><span id="savingsValue"> 0 </span> </div>
+                </div>
+              </div>
           </div>
-         
-        </section>
 
+          <div class="field">
+            <label class="label">Personal</label>
+              <div class="sliderContainer" >
+                <div class="slider" id="personalSlider">
+                  <div class="valueContainer"><span id="personalValue"> 0 </span> </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Miscellaneous</label>
+              <div class="sliderContainer" >
+                <div class="slider" id="miscellSlider">
+                  <div class="valueContainer"><span id="miscellValue"> 0 </span> </div>
+                </div>
+              </div>
+          </div>
         <footer class="modal-card-foot">
-          <button id="saveButton" class="button is-success">Save changes</button>
-          <button id="cancelButton" class="button">Cancel</button>
+          <div id="modalFoot">
+            <section>
+            <button id="saveButton" class="button is-success">Save changes</button>
+            <button id="cancelButton" class="button">Cancel</button>
+            </section>
+          </div>
         </footer>
       </div>
     </div>
-    </div>
-
-    <!-- ================== Slider transaction =====================-->
-
+    <!-- ================== Transaction Modal =====================-->
     <section id="sideTransaction">
       <div id="mySide" class="sidenav">
         <a href="#" id="position"> <img id="trans" src="./images/iconmonstr-gear-1.svg" width="30" height="30"/></a>
@@ -128,15 +150,14 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Transaction</p>
-          <button class="delete" aria-label="close"></button>
+            <p class="modal-card-title">Transaction</p>
+            <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body" id="cardBody">
-
           <div class="dropdown" id="dropdown">
             <div class="dropdown-trigger">
               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>Purpose</span>
+                <span id="active-purpose">Purpose</span>
                 <span class="icon is-small">
                   <i class="fas fa-angle-down" aria-hidden="true"></i>
                 </span>
@@ -144,22 +165,20 @@
             </div>
             <div class="dropdown-menu" id="dropdown-menu" role="menu">
               <div class="dropdown-content">
-
-            <!--======Purpose going here ========-->
-
               </div>
             </div>
           </div>
-         
           <form class="transaction">
               <div class="field">
                 <label class="label has-text-left title is-5">Amount</label>
                 <div class="control has-icons-left ">
-                  <input id="amount" class="input is-link" type="text" placeholder="Text input">
+                  <input id="amount" class="input is-link" type="text" placeholder="00.00">
                   <span class="icon is-small is-left">
                     <i class="fas fa-dollar-sign"></i>
                   </span>
                 </div>
+            </div>
+            <form class="transaction">
                 <div class="field">
                   <label class="label has-text-left title is-5">Note
                   <span class="icon is-small is-left">
@@ -167,11 +186,11 @@
                   </span>
                 </label>
                   <div class="control">
-                    <textarea id="note" class="textarea is-link" placeholder="Textarea"></textarea>
+                    <textarea id="note" class="textarea is-link" placeholder="Note"></textarea>
                   </div>
                 </div>
                 <hr>
-                <button id="budget" class="button is-medium is-fullwidth is-link">Add Budget</button>
+                <button id="budget" class="button is-medium is-fullwidth is-link">Submit Transaction</button>
           </div>
         </div>
       </form>
@@ -183,46 +202,15 @@
       </div>
     </div>
     </div>
-
-
-
-
-
-
-
-
-
-    <!-- ================== Panel =====================-->
-
+    <!-- ================== Transactions Panel =====================-->
     <div id="panel">
       <article class="panel is-link has-text-centered ">
         <p class="panel-heading">
-          Primary
+            Transactions
         </p>
-        <a class="panel-block is-active">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          bulma
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          marksheet
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          minireset.css
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          jgthms.github.io
-        </a>
+        <div class="transactions-list">
+          <!-- transactions go here -->
+        </div>
       </article>
     </div>
   </div>
@@ -230,8 +218,12 @@
     <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="./js/modalSettings.js"></script>
+    <script src="./js/dashboard.js"></script>
     <script src="./js/myChart.js"></script>
+    <script src="./js/transaction.js"></script>
   </body>
   
 </html>
