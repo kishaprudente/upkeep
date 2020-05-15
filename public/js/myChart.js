@@ -34,14 +34,14 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 	options: {
 		responsive: true,
 		title: {
-			fontSize:30,
+			fontSize: 25,
 			display: true,
-			text: "Monthly Budget",
+			text: "Budget",
 			fontColor: "black",
 		},
 		legend: {
 			labels: {
-				fontSize:15,
+				fontSize: 12,
 				// This more specific font property overrides the global property
 				fontColor: "black",
 			},
@@ -157,20 +157,20 @@ var rangeSlider = async function () {
 
 rangeSlider();
 
-// $(document).ready(function () {
-// 	async function displayTotalBudget() {
-// 		try {
-// 			await $.get("/api/budgets", function (data) {
-// 				console.log(data);
-// 				console.log(data[0].balance);
-// 				outerDoughnut.options.title.text =
-// 					"$" +
-// 					data[0].balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-// 			});
-// 		} catch (err) {
-// 			throw new err();
-// 		}
-// 		console.log(outerDoughnut.options.title.text);
-// 	}
-// 	displayTotalBudget();
-// });
+$(document).ready(function () {
+	async function displayTotalBudget() {
+		try {
+			await $.get("/api/budgets", function (data) {
+				console.log(data);
+				console.log(data[0].balance);
+				outerDonut.options.title.text =
+					"$" +
+					data[0].balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			});
+		} catch (err) {
+			throw new err();
+		}
+		console.log(outerDonut.options.title.text);
+	}
+	displayTotalBudget();
+});
