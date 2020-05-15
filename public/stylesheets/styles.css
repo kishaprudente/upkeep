@@ -5,33 +5,6 @@ html{
 body {
 	overflow: hidden;
 }
-body {
-	background: linear-gradient(106deg, lightgray, darkgrey);
-	background-size: 400% 400%;
-
-	-webkit-animation: gradientAnimation 0s ease infinite;
-	-moz-animation: gradientAnimation 0s ease infinite;
-	animation: gradientAnimation 0s ease infinite;
-
-
-	
-
-}
-@-webkit-keyframes gradientAnimation {
-    0%{background-position:67% 0%}
-    50%{background-position:34% 100%}
-    100%{background-position:67% 0%}
-}
-@-moz-keyframes gradientAnimation {
-    0%{background-position:67% 0%}
-    50%{background-position:34% 100%}
-    100%{background-position:67% 0%}
-}
-@keyframes gradientAnimation {
-    0%{background-position:67% 0%}
-    50%{background-position:34% 100%}
-    100%{background-position:67% 0%}
-}
 
 .centerDonut {
 	width: 100%;
@@ -67,12 +40,8 @@ body {
 	width: auto;
 }
 
-#about{
-    top: 12%;
-	background-color: hsl(217, 71%, 53%);
-}
 #mySidenav a {
-	position: absolute; 
+	position: absolute; /* Position them relative to the browser window */
 	left: -70px; /* Position them outside of the screen */
 	transition: 0.3s; /* Add transition on hover */
 	padding: 15px; /* 15px padding */
@@ -88,13 +57,16 @@ body {
 }
 
 /* The about link: 20px from the top with a green background */
-
+#about {
+	 top: 12%;
+	background-color: hsl(217, 71%, 53%);
+}
 .input {
 	color: white;
 }
 
 .modal-card-head {
-	background-color: darkblue;
+	background-color: hsl(217, 71%, 53%);
 }
 
 .modal-card-title {
@@ -106,14 +78,14 @@ body {
 }
 
 .modal-card-foot {
-	background-color: darkBlue;
+	background-color: hsl(217, 71%, 53%);
+	width: 100%;
 }
 element.style {
     display: block;
     height: 478px;
     width: 960px;
 }
-
 
 
 #mySide a {
@@ -128,8 +100,9 @@ element.style {
 	border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
 }
 #position{
-    top: 36%;
-	background-color: hsl(123, 75%, 36%);
+    top: 25%;
+	background-color: hsl(128, 75%, 52%);
+
 }
 #mySide a:hover {
 	left: 0; /* On mouse-over, make the elements appear as they should */
@@ -139,233 +112,17 @@ element.style {
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 600px) {
+	#doughnut-chart{
+		width: 100%;
+		height: 100%;
+	}
+	.container{
+		margin-top: 10%;
+	}
+
+  }
 .modal-card-foot {
 	margin-top: 35px;
 }
 
-#donutSection {
-	width: 100vw;
-}
-
-@media only screen 
-  and (min-device-width: 370px) 
-  and (max-device-width: 815px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
-
-	
-	
-	#navBar {
-		display: none;
-	}
-
-	#donutSection {
-		padding: 3px;
-		pointer-events: none;
-	}
-
-	#mySidenav a {
-		position: absolute; 
-		pointer-events: auto;
-		left: 5vw; /* Position them outside of the screen */
-		transition: 0.3s; /* Add transition on hover */
-		padding: 15px; /* 15px padding */
-		width: 80px; /* Set a specific width */
-		text-decoration: none; /* Remove underline */
-		font-size: 20px; /* Increase font size */
-		border: solid;
-		border-color: white;
-		border-width: 3px;
-		border-radius: 1000px;
-		color: white; /* White text color */
-		top: 12vh;
-		background-color: rgb(80, 80, 80);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
-		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
-	}
-
-	
-	#mySide a {
-		position: absolute; 
-		pointer-events: auto;
-		left: 5vw; /* Position them outside of the screen */
-		transition: 0.3s; /* Add transition on hover */
-		padding: 15px; /* 15px padding */
-		width: 80px; /* Set a specific width */
-		text-decoration: none; /* Remove underline */
-		font-size: 20px; /* Increase font size */
-		border: solid;
-		border-color: white;
-		border-width: 3px;
-		border-radius: 1000px;
-		color: white; /* White text color */
-		top: 60vh;
-		background-color: hsl(123, 75%, 36%);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
-	}
-
-	#transactionSideButton a{
-		position: absolute; 
-		pointer-events: auto;
-		right: 3vw; /* Position them outside of the screen */
-		transition: 0.3s; /* Add transition on hover */
-		padding: 15px; /* 15px padding */
-		width: 30vw; /* Set a specific width */
-		text-decoration: none; /* Remove underline */
-		font-size: 16px; /* Increase font size */
-		font-weight: bolder;
-		border: solid;
-		border-color: white;
-		border-width: 3px;
-		border-radius: 50px;
-		color: white; /* White text color */
-		top: 64vh;
-		background-color: darkblue;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
-	}
-	#viewButtonContainer {
-		display: inline-block;
-	}
-
-	#transactionContainer {
-		width: 50vw;
-	}
-
-	#viewIcon {
-		float: left;
-	}
-
-	#viewText {
-		padding-top: 2px;
-		padding-left: 5px;
-		float: right;
-	}
-
-
-	#budget {
-		width: 33%;;
-	}
-
-	#cancelTransaction {
-		width: 33%;
-		background-color: lightgray ;
-	}
-
-	#transactionFooter {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.transactions-list {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-	}
-	.card-header-title {
-		display: inline;	
-		text-align: center;
-		color: white;
-		font-weight: bolder;
-		text-shadow: 2px 2px 8px rgb(87, 86, 86);
-		font-size: larger;
-	}
-
-	.content {
-		display: inline;
-		text-align: center;
-	}
-
-	.panel {
-		margin: 10px;
-	}
-
-	#panelHead {
-		background-color: darkblue;
-	}
-	
-	.card {
-		width: 70vw;
-		margin: 10px;
-		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
-		border: solid;
-		border-color: rgba(56, 56, 56, 0.062);
-		border-width: 4px;
-		border-radius: 10px;
-	}
-
-	.Rent {
-		background-color: #85bb65;
-		border-radius: 10px;
-	}
-	.Food {
-		background-color: #65bb70;
-		border-radius: 10px;
-	}
-	.Utilities {
-		background-color: #65bb9b;
-		border-radius: 10px;
-	}
-	.Savings {
-		background-color: #65b0bb;
-		border-radius: 10px;
-	}
-	.Personal {
-		background-color: #6585bb;
-		border-radius: 10px;
-	}
-	.Miscellaneous {
-		background-color: #7065bb;
-		border-radius: 10px;
-	}
-
-	#amount {
-		color: black;
-	}
-
-	#note {
-		color: black;
-	}
-}
-
-#delete-transaction {
-	background-color: #800020;
-	color: white;
-	font-weight: bolder;
-	border-radius: 10px;
-}
-#donutContainer {
-	position: relative; 
-	height:91vh;
-	 width:91vw;
-
-}
-@media screen 
-  and (min-device-width: 1200px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-	#donutContainer {
-		position: relative; 
-		height:80vh;
-		 width:80vw;
-	}
-	
-	
- 
-}
