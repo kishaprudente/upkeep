@@ -136,7 +136,7 @@
           <div class="dropdown" id="dropdown">
             <div class="dropdown-trigger">
               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>Purpose</span>
+                <span id="active-purpose">Purpose</span>
                 <span class="icon is-small">
                   <i class="fas fa-angle-down" aria-hidden="true"></i>
                 </span>
@@ -155,7 +155,7 @@
               <div class="field">
                 <label class="label has-text-left title is-5">Amount</label>
                 <div class="control has-icons-left ">
-                  <input id="amount" class="input is-link" type="text" placeholder="Text input">
+                  <input id="amount" class="input is-link" type="text" placeholder="00.00">
                   <span class="icon is-small is-left">
                     <i class="fas fa-dollar-sign"></i>
                   </span>
@@ -167,11 +167,11 @@
                   </span>
                 </label>
                   <div class="control">
-                    <textarea id="note" class="textarea is-link" placeholder="Textarea"></textarea>
+                    <textarea id="note" class="textarea is-link" placeholder="Note"></textarea>
                   </div>
                 </div>
                 <hr>
-                <button id="budget" class="button is-medium is-fullwidth is-link">Add Budget</button>
+                <button id="budget" class="button is-medium is-fullwidth is-link">Submit Transaction</button>
           </div>
         </div>
       </form>
@@ -233,6 +233,7 @@
     <script src="./js/modalSettings.js"></script>
     <script src="./js/dashboard.js"></script>
     <script src="./js/myChart.js"></script>
+    <script src="./js/transaction.js"></script>
   </body>
   
 </html>
