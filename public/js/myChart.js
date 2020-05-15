@@ -21,7 +21,7 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 				label: "$",
 				backgroundColor: [
 					"#85bb65",
-					"#65bb70",
+				    "#65bb70",
 					"#65bb9b",
 					"#65b0bb",
 					"#6585bb",
