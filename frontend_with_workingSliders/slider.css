@@ -39,55 +39,48 @@ body {
 .valueContainer {
     position: absolute;
     width: auto;
-    right: -72px;
+    right: -58px;
     top: -6px;
 }
 
 
 
 #budgetValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 #rentValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 #foodValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 
 }
 
 #utilitiesValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 
 
 #savingsValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 #personalValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 
 #miscellValue {
-    /* color: white; */
-    color: black;
+    color: white;
     font-weight: bold;
 }
 

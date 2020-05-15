@@ -2,160 +2,312 @@
 const dash = new Dashboard();
 
 Chart.defaults.global.responsive = true;
+var total = 0;
+var budget;
 var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
-	type: "doughnut",
-	data: {
-		labels: ["Rent", "Groceries", "Utilities", "Savings", "Unused"],
-		datasets: [
-			{
-				label: "Dollars",
-				backgroundColor: [
-					"#85bb65",
-					"#65bb70",
-					"#65bb9b",
-					"#bb9b65",
-					"#808080",
-				],
-				data: [0, 0, 0, 0, 5000],
-			},
-			{
-				label: "Dollars",
-				backgroundColor: [
-					"#85bb65",
-					"#65bb70",
-					"#65bb9b",
-					"#bb9b65",
-					"#808080",
-				],
-				data: [500, 500, 500, 500, 3000],
-			},
-		],
-	},
-	options: {
-		responsive: true,
-		title: {
-			fontSize:30,
-			display: true,
-			text: "Monthly Budget",
-			fontColor: "black",
-		},
-		legend: {
-			labels: {
-				fontSize:15,
-				// This more specific font property overrides the global property
-				fontColor: "black",
-			},
-		},
-	},
+    type: 'doughnut',
+    data: {
+      labels: ["Rent", "Food", "Utilities", "Savings", "Personal", "Miscellaneous", "Unused"],
+      datasets: [
+        {
+          label: "$",
+          backgroundColor: ["#85bb65", "#65bb70","#65bb9b","#65b0bb", "#6585bb", " #7065bb ", "#808080"],
+          data: [0,0,0,0,0,0, 5000]
+        },
+        {
+          label: "$",
+          backgroundColor: ["#85bb65", "#65bb70","#65bb9b","#65b0bb", "#6585bb", " #7065bb ", "#808080"],
+          data: [500,500,500,500,500, 500, 3000]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: 'Monthly Budget',
+        fontColor: "black"
+      },
+      legend: {
+        labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black'
+        }
+    }
+    }
 });
 
-var rangeSlider = async function () {
-	var slider = $(".range-slider"),
-		range = $(".range-slider__range"),
-		value = $(".range-slider__value");
-	$saveButton = $("#saveButton");
-	const purposes = await dash.addTotals();
-	//--------------------RENT--------------------------------
-	$rentSlider = $("#rentSlider");
-	$rentValue = $("#rentValue");
 
-	console.log(purposes);
-	var rentValue = purposes[0];
-	$rentValue.html(rentValue);
 
-	outerDonut.data.datasets[1].data[0] = parseInt(rentValue);
-	outerDonut.update();
 
-	$rentSlider.on("input", function () {
-		$rentValue.html($rentSlider.val());
-		// outerDonut.data.datasets[0].data[0] = parseInt($rentSlider.val());
-		// outerDonut.data.datasets[0].data[4] -= parseInt($rentSlider.val());
-		// outerDonut.update();
-	});
+var rangeSlider = function(){
 
-	//----------------------------------GROCIERIES---------------------------------
-	$groceriesSlider = $("#groceriesSlider");
-	$groceriesValue = $("#groceriesValue");
+      
 
-	var groceriesValue = $groceriesSlider.attr("value");
-	$groceriesValue.html(groceriesValue);
 
-	outerDonut.data.datasets[0].data[1] = parseInt(groceriesValue);
-	outerDonut.update();
+      $saveButton = $("#saveButton");
+      const outerArray = outerDonut.data.datasets[0].data;
+      
+      $rentValue = $("#rentValue");
+      $foodValue = $("#foodValue");
+      $utilitiesValue = $("#utilitiesValue");
+      $savingsValue = $("#savingsValue");
+      $personalValue = $("#personalValue");
+      $miscellValue = $("#miscellValue");
+      valueArray = [$rentValue, $foodValue, $utilitiesValue, $savingsValue, $personalValue, $miscellValue];
+      //--------------------BUDGeT--------------------------------
+      $budgetSlider = $("#budgetSlider");
+      $budgetValue = $("#budgetValue");
+      
+      var budgetValue;
+      // console.log(valueArray[0][0].id.slice(0, -5)); 
+      $budgetSlider.slider({
+        min: 0,
+        max: 7000,
+        step: 500,
+        slide: function(ev, ui) {
+          budgetValue = ui.value;
+          budget = parseInt(budgetValue);
+          $budgetValue.html(budgetValue);
+        }
+      });
+      //--------------------RENT--------------------------------
+      $rentSlider = $("#rentSlider");
+      
+      
+      var rentValue;
+      
+     
+      $rentSlider.slider({
+        
+        slide: function(ev, ui) {
+          // total = total + ui.value;
+          rentValue = ui.value;
+          // total += rentValue;
+          total = rentValue;
+          for(let i = 0; i <valueArray.length; i++) {
+            if(valueArray[i][0].id.slice(0, -5) != "rent") {
+              total += parseInt(valueArray[i][0].textContent);
+            }
+          }
+          // // console.log("total: " + total);
+          if(total > 100) {
+            
+            return false;
+          } else {
+            $rentValue.html(rentValue);
+          }
+          
+          
+        }
+      });
+      
+      //----------------------------------GROCIERIES---------------------------------
+      $foodSlider = $("#foodSlider");
+      
+      
+      var foodValue;
+      
+     
+      $foodSlider.slider({
+        slide: function(ev, ui) {
+          foodValue = ui.value;
+          total = foodValue;
+          for(let i = 0; i <valueArray.length; i++) {
+            if(valueArray[i][0].id.slice(0, -5) != "food") {
+              total += parseInt(valueArray[i][0].textContent);
+            }
+          }
+          if(total > 100) {
+            return false;
+          } else {
+            $foodValue.html(foodValue);
+          }
+          
+          
+        }
+      });
+      //----------------------------------UTILITIES---------------------------------
+      $utilitiesSlider = $("#utilitiesSlider");
+      
+      
+      var utilitiesValue;
+      
+     
+      $utilitiesSlider.slider({
+        slide: function(ev, ui) {
+          utilitiesValue = ui.value;
+          total = utilitiesValue;
+          for(let i = 0; i < valueArray.length; i++) {
+            if(valueArray[i][0].id.slice(0, -5) != "utilities") {
+              total += parseInt(valueArray[i][0].textContent);
+            }
+          }
+          if(total > 100) {
+            return false;
+          } else {
+            $utilitiesValue.html(utilitiesValue);
+          }
+          
+        }
+      });
 
-	$groceriesSlider.on("input", function () {
-		$groceriesValue.html($groceriesSlider.val());
-		// outerDonut.data.datasets[0].data[1] = parseInt($groceriesSlider.val());
-		// outerDonut.data.datasets[0].data[4] -= outerDonut.data.datasets[0].data[4] -  parseInt($groceriesSlider.val());
-		// outerDonut.update();
-	});
-	//----------------------------------UTILITIES---------------------------------
-	$utilitiesSlider = $("#utilitiesSlider");
-	$utilitiesValue = $("#utilitiesValue");
+      //----------------------------------SAVINGS---------------------------------
+      $savingsSlider = $("#savingsSlider");
+      
+      
+      var savingsValue;
+      
+     
+      $savingsSlider.slider({
+        slide: function(ev, ui) {
+          savingsValue = ui.value;
+          total = savingsValue;
+          for(let i = 0; i <valueArray.length; i++) {
+            if(valueArray[i][0].id.slice(0, -5) != "savings") {
+              total += parseInt(valueArray[i][0].textContent);
+            }
+          }
+          if(total > 100) {
+            return false;
+          } else {
+            $savingsValue.html(savingsValue);
+          }
+        }
+      });
 
-	var utilitiesValue = $utilitiesSlider.attr("value");
-	$utilitiesValue.html(utilitiesValue);
+      //----------------------------------Personal---------------------------------
+      $personalSlider = $("#personalSlider");
+      
+      
+      var personalValue;
+      
+     
+      $personalSlider.slider({
+        slide: function(ev, ui) {
+          personalValue = ui.value;
+          total = personalValue;
+          for(let i = 0; i <valueArray.length; i++) {
+            if(valueArray[i][0].id.slice(0, -5) != "personal") {
+              total += parseInt(valueArray[i][0].textContent);
+            }
+          }
+          if(total > 100) {
+            return false;
+          } else {
+            $personalValue.html(personalValue);
+          }
+        }
+      });
 
-	outerDonut.data.datasets[0].data[1] = parseInt(utilitiesValue);
-	outerDonut.update();
+      //---------------------------------Miscellaneous---------------------------------
+      $miscellSlider = $("#miscellSlider");
+      
+      
+      var miscellValue;
+      
+     
+      $miscellSlider.slider({
+        slide: function(ev, ui) {
+          miscellValue = ui.value;
+          total = miscellValue;
+          for(let i = 0; i <valueArray.length; i++) {
+            if(valueArray[i][0].id.slice(0, -5) != "miscell") {
+              total += parseInt(valueArray[i][0].textContent);
+            }
+          }
+          if(total > 100) {
+            return false;
+          } else {
+            $miscellValue.html(miscellValue);
+          }
+        }
+      });
 
-	$utilitiesSlider.on("input", function () {
-		$utilitiesValue.html($utilitiesSlider.val());
-		// outerDonut.data.datasets[0].data[2] = parseInt($utilitiesSlider.val());
-		// outerDonut.data.datasets[0].data[4] -= outerDonut.data.datasets[0].data[4] -  parseInt($groceriesSlider.val());
-		// outerDonut.update();
-	});
+      
+      //--------------------------SAVE----------------------------------------
+      $saveButton.click(function () {
+        // console.log("BUDGET IS: " + budget);
+        outerDonut.data.datasets[0].data[outerArray.length -1] = budget;
+        // // console.log(outerDonut.data.datasets[0].data);
 
-	//----------------------------------SAVINGS---------------------------------
-	$savingsSlider = $("#savingsSlider");
-	$savingsValue = $("#savingsValue");
+        //----------------Budget---------------------------
+        outerDonut.data.datasets[0].data[outerArray.length - 1] = budget;
+        outerDonut.update();
 
-	var savingsValue = $savingsSlider.attr("value");
-	$savingsValue.html(savingsValue);
+        //----------------RENT---------------------------
+        var rentRaw = parseInt($rentValue[0].innerHTML) / 100;
+        var rentPercent = Math.round((rentRaw + Number.EPSILON) * 100) / 100
+        var rentCost = Math.round(rentPercent * budget);
+        // console.log(rentCost);
+        outerDonut.data.datasets[0].data[0] = rentCost;
+        outerDonut.data.datasets[0].data[outerArray.length -1] -= rentCost;
+        outerDonut.update();
 
-	outerDonut.data.datasets[0].data[1] = parseInt(savingsValue);
-	outerDonut.update();
+        // //----------------FOOD
+        var foodRaw = parseInt($foodValue[0].innerHTML) / 100;
+        var foodPercent = Math.round((foodRaw + Number.EPSILON) * 100) / 100
+        var foodCost = Math.round(foodPercent * budget);
+        // console.log(foodCost);
+        outerDonut.data.datasets[0].data[1] = foodCost;
+        outerDonut.data.datasets[0].data[outerArray.length -1] -= foodCost;
+        outerDonut.update();
 
-	$savingsSlider.on("input", function () {
-		$savingsValue.html($savingsSlider.val());
-		// outerDonut.data.datasets[0].data[3] = parseInt($savingsSlider.val());
-		// outerDonut.data.datasets[0].data[4] -= outerDonut.data.datasets[0].data[4] -  parseInt($groceriesSlider.val());
-		// outerDonut.update();
-	});
-	//--------------------------SAVE----------------------------------------
-	$saveButton.click(function () {
-		outerDonut.data.datasets[0].data[4] = 5000;
-		console.log(outerDonut.data.datasets[0].data);
-		//----------------RENT---------------------------
-		outerDonut.data.datasets[0].data[0] = parseInt($rentSlider.val());
-		outerDonut.data.datasets[0].data[4] -= parseInt($rentSlider.val());
-		console.log(outerDonut.data.datasets[0].data);
-		outerDonut.update();
+        // //------------------UTILITIES
+        var utilitiesRaw = parseInt($utilitiesValue[0].innerHTML) / 100;
+        var utilitiesPercent = Math.round((utilitiesRaw + Number.EPSILON) * 100) / 100
+        var utilitiesCost = Math.round(utilitiesPercent * budget);
+        // console.log(utilitiesCost);
+        outerDonut.data.datasets[0].data[2] = utilitiesCost;
+        outerDonut.data.datasets[0].data[outerArray.length -1] -= utilitiesCost;
+        outerDonut.update();
 
-		//----------------GROCIERIES
-		outerDonut.data.datasets[0].data[1] = parseInt($groceriesSlider.val());
-		outerDonut.data.datasets[0].data[4] -= parseInt($groceriesSlider.val());
-		console.log(outerDonut.data.datasets[0].data);
-		outerDonut.update();
+        // //----------------SAVINGS------------------------------------------
+        var savingsRaw = parseInt($savingsValue[0].innerHTML) / 100;
+        var savingsPercent = Math.round((savingsRaw + Number.EPSILON) * 100) / 100
+        var savingsCost = Math.round(savingsPercent * budget);
+        // console.log(savingsCost);
+        outerDonut.data.datasets[0].data[3] = savingsCost;
+        outerDonut.data.datasets[0].data[outerArray.length -1] -= savingsCost;
+        outerDonut.update();
 
-		//------------------UTILITIES
-		outerDonut.data.datasets[0].data[2] = parseInt($utilitiesSlider.val());
-		outerDonut.data.datasets[0].data[4] -= parseInt($utilitiesSlider.val());
-		outerDonut.update();
+        //  //----------------PERSONAL------------------------------------------
+        var personalRaw = parseInt($personalValue[0].innerHTML) / 100;
+        var personalPercent = Math.round((personalRaw + Number.EPSILON) * 100) / 100
+        var personalCost = Math.round(personalPercent * budget);
+        // console.log(personalCost);
+        outerDonut.data.datasets[0].data[4] = personalCost;
+        outerDonut.data.datasets[0].data[outerArray.length -1] -= personalCost;
+        outerDonut.update();
 
-		//----------------SAVINGS------------------------------------------
-		$savingsValue.html($savingsSlider.val());
-		outerDonut.data.datasets[0].data[3] = parseInt($savingsSlider.val());
-		outerDonut.data.datasets[0].data[4] -= parseInt($savingsSlider.val());
-		outerDonut.update();
+        //  //----------------MISCELLANOUS------------------------------------------
+        var miscellRaw = parseInt($miscellValue[0].innerHTML) / 100;
+        var miscellPercent = Math.round((miscellRaw + Number.EPSILON) * 100) / 100
+        var miscellCost = Math.round(miscellPercent * budget);
+        // // console.log(miscellCost);
+        outerDonut.data.datasets[0].data[5] = miscellCost;
+        outerDonut.data.datasets[0].data[outerArray.length -1] -= miscellCost;
+        outerDonut.update();
 
-		console.log(outerDonut.data.datasets[0].data);
+        // console.log(outerDonut.data.datasets[0].data);
 
-		$("#modalCard").toggleClass("is-active");
-	});
+        $("#modalCard").removeClass("is-active");
+
+      });
+
+      $("#cancelButton").click( function () {
+        $("#modalCard").removeClass("is-active");
+      });
+
+      $("#closeButton").click( function () {
+        $("#modalCard").removeClass("is-active");
+      });
+
+
 };
 
 rangeSlider();
+
 
 // $(document).ready(function () {
 // 	async function displayTotalBudget() {
