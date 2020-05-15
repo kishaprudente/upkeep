@@ -38,9 +38,6 @@
             <div id="navbarBasicExample" class="navbar-menu">          
               <div class="navbar-end">
                 <div class="navbar-item">
-
-                    <!-- <img id="gear" src="iconmonstr-gear-1.svg" width="60" height="60"/> -->
-
                     <a id="log-out" class="button is-success is-rounded" href="/logout">
                         <strong>Log Out</strong>
                     </a>
@@ -61,7 +58,6 @@
         </div>
     </section>
 
-
     <div id="modalCard" class="modal">
       <div class="modal-background"></div>
       <div class="modal-card">
@@ -75,7 +71,6 @@
             <label class="label">Budget</label>
               <div class="sliderContainer" >
                 <div class="sliderBudget" id="budgetSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="budgetValue"> 0 </span> </div>
                 </div>
               </div>
@@ -86,7 +81,6 @@
             <label class="label">Rent</label>
               <div class="sliderContainer" >
                 <div class="slider" id="rentSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="rentValue"> 0 </span> </div>
                 </div>
               </div>
@@ -96,7 +90,6 @@
             <label class="label">Food</label>
               <div class="sliderContainer" >
                 <div class="slider" id="foodSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="foodValue"> 0 </span> </div>
                 </div>
               </div>
@@ -106,7 +99,6 @@
             <label class="label">Utilities</label>
               <div class="sliderContainer" >
                 <div class="slider" id="utilitiesSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="utilitiesValue"> 0 </span> </div>
                 </div>
               </div>
@@ -116,7 +108,6 @@
             <label class="label">Savings</label>
               <div class="sliderContainer" >
                 <div class="slider" id="savingsSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="savingsValue"> 0 </span> </div>
                 </div>
               </div>
@@ -126,7 +117,6 @@
             <label class="label">Personal</label>
               <div class="sliderContainer" >
                 <div class="slider" id="personalSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="personalValue"> 0 </span> </div>
                 </div>
               </div>
@@ -136,28 +126,21 @@
             <label class="label">Miscellaneous</label>
               <div class="sliderContainer" >
                 <div class="slider" id="miscellSlider">
-                <!-- <input   id="rentSlider" type="range" value="0" min="0" max="3000" step="5"> -->
                   <div class="valueContainer"><span id="miscellValue"> 0 </span> </div>
                 </div>
               </div>
           </div>
-
-         
         <footer class="modal-card-foot">
           <div id="modalFoot">
             <section>
             <button id="saveButton" class="button is-success">Save changes</button>
             <button id="cancelButton" class="button">Cancel</button>
             </section>
-
-
           </div>
         </footer>
       </div>
     </div>
-   
-    <!-- ================== Slider transaction =====================-->
-
+    <!-- ================== Transaction Modal =====================-->
     <section id="sideTransaction">
       <div id="mySide" class="sidenav">
         <a href="#" id="position"> <img id="trans" src="./images/iconmonstr-gear-1.svg" width="50" height="50"/></a>
@@ -171,7 +154,6 @@
             <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body" id="cardBody">
-
           <div class="dropdown" id="dropdown">
             <div class="dropdown-trigger">
               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -183,13 +165,9 @@
             </div>
             <div class="dropdown-menu" id="dropdown-menu" role="menu">
               <div class="dropdown-content">
-
-            <!--======Purpose going here ========-->
-
               </div>
             </div>
           </div>
-         
           <form class="transaction">
               <div class="field">
                 <label class="label has-text-left title is-5">Amount</label>
@@ -198,10 +176,6 @@
                   <span class="icon is-small is-left">
                     <i class="fas fa-dollar-sign"></i>
                   </span>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                        <!--======Purpose going here ========--></div>
                 </div>
             </div>
             <form class="transaction">
@@ -228,8 +202,7 @@
       </div>
     </div>
     </div>
-    <!-- ================== Panel =====================-->
-
+    <!-- ================== Transactions Panel =====================-->
     <div id="panel">
       <article class="panel is-link has-text-centered ">
         <p class="panel-heading">
@@ -238,30 +211,6 @@
         <div class="transactions-list">
           <!-- transactions go here -->
         </div>
-        <!-- <a class="panel-block is-active">
-            <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
-            </span>
-            bulma
-        </a>
-        <a class="panel-block">
-            <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
-            </span>
-            marksheet
-        </a>
-        <a class="panel-block">
-            <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
-            </span>
-            minireset.css
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          jgthms.github.io
-        </a> -->
       </article>
     </div>
   </div>
