@@ -121,9 +121,25 @@ $(document).ready(function () {
 			transactionList.append(transContainer);
 		});
 	}
-	renderTransactions();
 
-	// add function to delete transaction
+	renderTransactions();
+	transactionList.on("click", async (event) => {
+		try {
+			console.log(event.target);
+			if (event.target.matches("button")) {
+				var transactionId = $(event.target).parent().parent().attr("data-id");
+				console.log(transactionId);
+				await $.ajax({
+					method: "DELETE",
+					url: "/api/transactions/" + transactionId,
+				});
+				console.log("Transaction deleted");
+				location.reload();
+			}
+		} catch (err) {
+			throw err;
+		}
+	});
 
 	renderPurposes();
 	$(".dropdown-content").on("click", (event) => {
