@@ -22,9 +22,7 @@ $(document).ready(function () {
 				email: email,
 				password: password,
 			});
-			console.log("HELLO");
 			window.location.replace("/dashboard");
-			console.log("sign up done");
 		} catch {
 			handleSignUpErr("Invalid entry. Try again ");
 		}

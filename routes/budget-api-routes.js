@@ -58,16 +58,27 @@ module.exports = (app) => {
 	});
 
 	// put - /api/budgets/:id
-	app.put("/api/budgets", async (req, res) => {
+	app.put("/api/budgets/:id", async (req, res) => {
 		try {
-			const updateBudget = await db.Budget.update(req.body, {
+			const updatedBudget = {
+				total: req.body.total,
+				rent: req.body.rent,
+				food: req.body.food,
+				utilities: req.body.utilities,
+				savings: req.body.savings,
+				personal: req.body.personal,
+				miscellaneous: req.body.miscellaneous,
+				UserId: req.body.UserId,
+			};
+			console.log("DB UPDATED", updatedBudget);
+			const updateBudget = await db.Budget.update(updatedBudget, {
 				where: {
-					id: req.body.id,
+					id: req.body.UserId,
 				},
 			});
 			res.json(updateBudget);
 		} catch {
-			throw new Error("Cannot update this budget");
+			throw new Error("Cannot update this budget at id:" + req.params.id);
 		}
 	});
 };

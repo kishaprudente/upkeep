@@ -274,7 +274,8 @@ var rangeSlider = function () {
 
 		// //----------------SAVINGS------------------------------------------
 		var savingsRaw = parseInt($savingsValue[0].innerHTML) / 100;
-		var savingsPercent = Math.round((savingsRaw + Number.EPSILON) * 100) / 100;
+		var savingsPercent =
+			Math.round((savingsRaw + Number.EPSILON) * 100) / 100;
 		var savingsCost = Math.round(savingsPercent * budget);
 		// console.log(savingsCost);
 		outerDonut.data.datasets[0].data[3] = savingsCost;
@@ -293,7 +294,8 @@ var rangeSlider = function () {
 
 		//  //----------------MISCELLANOUS------------------------------------------
 		var miscellRaw = parseInt($miscellValue[0].innerHTML) / 100;
-		var miscellPercent = Math.round((miscellRaw + Number.EPSILON) * 100) / 100;
+		var miscellPercent =
+			Math.round((miscellRaw + Number.EPSILON) * 100) / 100;
 		var miscellCost = Math.round(miscellPercent * budget);
 		// // console.log(miscellCost);
 		outerDonut.data.datasets[0].data[5] = miscellCost;
@@ -329,19 +331,6 @@ var rangeSlider = function () {
 rangeSlider();
 
 $(document).ready(function () {
-	async function displayTotalBudget() {
-		try {
-			await $.get("/api/budgets", function (data) {
-				console.log(data);
-				console.log(data[0].balance);
-				outerDonut.options.title.text =
-					"$" +
-					data[0].balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			});
-		} catch (err) {
-			throw new err();
-		}
-		console.log(outerDonut.options.title.text);
-	}
-	displayTotalBudget();
+	dash.displayTotalBudget();
+	renderOuterDonutValues();
 });

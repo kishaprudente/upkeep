@@ -4,8 +4,6 @@ class Dashboard {
 	async getUserId() {
 		try {
 			const thisUser = await $.get("/api/user_data");
-			console.log("USER ", thisUser);
-			console.log("USER ID: ", thisUser.id);
 			return thisUser.id;
 		} catch (err) {
 			throw err;
@@ -66,7 +64,8 @@ class Dashboard {
 				console.log(data);
 				console.log(data[0].total);
 				outerDonut.options.title.text =
-					"$" + data[0].total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					"$" +
+					data[0].total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			});
 		} catch (err) {
 			throw new err();
@@ -78,7 +77,9 @@ class Dashboard {
 		try {
 			const user = await this.getUserId();
 			const allBudgets = await $.get("/api/budgets/");
-			const userBudget = allBudgets.filter((budget) => budget.UserId === user);
+			const userBudget = allBudgets.filter(
+				(budget) => budget.UserId === user
+			);
 			console.log(userBudget);
 			return userBudget;
 		} catch {
