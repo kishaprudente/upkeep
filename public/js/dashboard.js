@@ -66,8 +66,7 @@ class Dashboard {
 				console.log(data);
 				console.log(data[0].total);
 				outerDonut.options.title.text =
-					"$" +
-					data[0].total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					"$" + data[0].total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			});
 		} catch (err) {
 			throw new err();
@@ -78,10 +77,8 @@ class Dashboard {
 	async getBudget() {
 		try {
 			const user = await this.getUserId();
-			const allBudgets = await $.get("/api/transactions/");
-			const userBudget = allBudgets.filter(
-				(budget) => budget.UserId === user
-			);
+			const allBudgets = await $.get("/api/budgets/");
+			const userBudget = allBudgets.filter((budget) => budget.UserId === user);
 			console.log(userBudget);
 			return userBudget;
 		} catch {
