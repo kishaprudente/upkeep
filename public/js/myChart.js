@@ -47,11 +47,10 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 		],
 	},
 	options: {
-		
 		title: {
 			display: false,
 			text: "Monthly Budget",
-			fontColor: "black"
+			fontColor: "black",
 		},
 		legend: {
 			labels: {
@@ -60,9 +59,9 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 				fontSize: 12,
 				fontStyle: "bold",
 				fontFamily: "sans-serif",
-				boxWidth: 20	
+				boxWidth: 20,
 			},
-			position: 'right'
+			position: "right",
 		},
 	},
 });
@@ -236,7 +235,7 @@ var rangeSlider = function () {
 	});
 
 	//--------------------------SAVE----------------------------------------
-	$saveButton.on('click touch',function () {
+	$saveButton.on("click touch", function () {
 		// console.log("BUDGET IS: " + budget);
 		outerDonut.data.datasets[0].data[outerArray.length - 1] = budget;
 		// // console.log(outerDonut.data.datasets[0].data);
@@ -275,8 +274,7 @@ var rangeSlider = function () {
 
 		// //----------------SAVINGS------------------------------------------
 		var savingsRaw = parseInt($savingsValue[0].innerHTML) / 100;
-		var savingsPercent =
-			Math.round((savingsRaw + Number.EPSILON) * 100) / 100;
+		var savingsPercent = Math.round((savingsRaw + Number.EPSILON) * 100) / 100;
 		var savingsCost = Math.round(savingsPercent * budget);
 		// console.log(savingsCost);
 		outerDonut.data.datasets[0].data[3] = savingsCost;
@@ -295,8 +293,7 @@ var rangeSlider = function () {
 
 		//  //----------------MISCELLANOUS------------------------------------------
 		var miscellRaw = parseInt($miscellValue[0].innerHTML) / 100;
-		var miscellPercent =
-			Math.round((miscellRaw + Number.EPSILON) * 100) / 100;
+		var miscellPercent = Math.round((miscellRaw + Number.EPSILON) * 100) / 100;
 		var miscellCost = Math.round(miscellPercent * budget);
 		// // console.log(miscellCost);
 		outerDonut.data.datasets[0].data[5] = miscellCost;
@@ -308,19 +305,23 @@ var rangeSlider = function () {
 		$("#modalCard").removeClass("is-active");
 	});
 
-	$("#cancelButton").on('click touch',function () {
+	$("#cancelButton").on("click touch", function () {
 		$("#modalCard").removeClass("is-active");
 	});
 
-	$("#closeButton").on('click touch',function () {
+	$("#closeButton").on("click touch", function () {
 		$("#modalCard").removeClass("is-active");
 	});
 
-	$("#closeTransaction").on('click touch',function () {
+	$("#closeTransaction").on("click touch", function () {
 		$("#modalTransaction").removeClass("is-active");
 	});
 
-	$("#cancelTransaction").on('click touch',function () {
+	$("#cancelTransaction").on("click touch", function () {
+		$("#modalTransaction").removeClass("is-active");
+	});
+
+	$("#budget").on("click touch", function () {
 		$("#modalTransaction").removeClass("is-active");
 	});
 };
