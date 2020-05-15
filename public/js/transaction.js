@@ -56,31 +56,9 @@ $(document).ready(function () {
 		}
 	}
 
-	transactionForm.on("submit", async function (event) {
-		event.preventDefault();
-		const userid = await getUserId();
-		console.log(userid);
-
-		const transactionData = {
-			purpose: purposeChoice.text().trim(),
-			amount: amountInput.val().trim(),
-			note: noteInput.val().trim(),
-			UserId: userid,
-		};
-		console.log("TRANSACTION DATA", transactionData);
-		const { purpose, amount, note, UserId } = transactionData;
-
-		if (purpose === "Purpose" || !amount) {
-			return;
-		}
-		addTransaction(purpose, amount, note, UserId);
-		purposeChoice.text("Purpose");
-		amountInput.val("");
-		noteInput.val("");
-	});
-
 	// add function to get transaction
 	async function renderTransactions() {
+		transactionList.empty();
 		const allTransactions = await dashB.getTransactions();
 		console.log("ALL TRANS", allTransactions);
 		allTransactions.forEach((transaction) => {
@@ -122,7 +100,39 @@ $(document).ready(function () {
 		});
 	}
 
-	renderTransactions();
+	async function renderInitialUnusedValue() {
+		try {
+			const userBudget = await dashB.getBudget();
+			console.log("userbudget", userBudget);
+			const { total } = userBudget[0];
+			outerDonut.data.datasets[1].data[6] = total;
+		} catch (err) {
+			throw err;
+		}
+	}
+
+	// set inner doughnut values
+	// 0rent, 1food, 2utilities, 3savings, 4personal, 5misc, 6unused
+	// get totals
+	async function renderInnerDoughnutValues() {
+		renderInitialUnusedValue();
+		const totals = await dashB.addTotals();
+		let index = 0;
+		totals.forEach((value) => {
+			outerDonut.data.datasets[1].data[index] = value;
+			outerDonut.data.datasets[1].data[6] -= value;
+			index++;
+		});
+		outerDonut.update();
+	}
+
+	function init() {
+		renderInnerDoughnutValues();
+		renderTransactions();
+		renderPurposes();
+	}
+
+	init();
 	transactionList.on("click", async (event) => {
 		try {
 			console.log(event.target);
@@ -141,11 +151,35 @@ $(document).ready(function () {
 		}
 	});
 
-	renderPurposes();
 	$(".dropdown-content").on("click", (event) => {
 		console.log(event.target);
 		if (event.target.matches("p")) {
 			purposeChoice.text(event.target.textContent);
 		}
+	});
+
+	transactionForm.on("submit", async function (event) {
+		event.preventDefault();
+		const userid = await getUserId();
+		console.log(userid);
+
+		const transactionData = {
+			purpose: purposeChoice.text().trim(),
+			amount: amountInput.val().trim(),
+			note: noteInput.val().trim(),
+			UserId: userid,
+		};
+		console.log("TRANSACTION DATA", transactionData);
+		const { purpose, amount, note, UserId } = transactionData;
+
+		if (purpose === "Purpose" || !amount) {
+			return;
+		}
+		addTransaction(purpose, amount, note, UserId);
+		purposeChoice.text("Purpose");
+		amountInput.val("");
+		noteInput.val("");
+		renderInnerDoughnutValues();
+		renderTransactions();
 	});
 });
