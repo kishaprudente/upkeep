@@ -68,7 +68,7 @@ class Dashboard {
 					data[0].total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			});
 		} catch (err) {
-			throw new err();
+			throw err;
 		}
 		console.log(outerDonut.options.title.text);
 	}
