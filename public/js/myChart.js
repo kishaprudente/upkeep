@@ -47,17 +47,22 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 		],
 	},
 	options: {
-		responsive: true,
+		
 		title: {
-			display: true,
+			display: false,
 			text: "Monthly Budget",
-			fontColor: "black",
+			fontColor: "black"
 		},
 		legend: {
 			labels: {
 				// This more specific font property overrides the global property
 				fontColor: "black",
+				fontSize: 12,
+				fontStyle: "bold",
+				fontFamily: "sans-serif",
+				boxWidth: 20	
 			},
+			position: 'right'
 		},
 	},
 });
@@ -231,7 +236,7 @@ var rangeSlider = function () {
 	});
 
 	//--------------------------SAVE----------------------------------------
-	$saveButton.click(function () {
+	$saveButton.on('click touch',function () {
 		// console.log("BUDGET IS: " + budget);
 		outerDonut.data.datasets[0].data[outerArray.length - 1] = budget;
 		// // console.log(outerDonut.data.datasets[0].data);
@@ -303,12 +308,20 @@ var rangeSlider = function () {
 		$("#modalCard").removeClass("is-active");
 	});
 
-	$("#cancelButton").click(function () {
+	$("#cancelButton").on('click touch',function () {
 		$("#modalCard").removeClass("is-active");
 	});
 
-	$("#closeButton").click(function () {
+	$("#closeButton").on('click touch',function () {
 		$("#modalCard").removeClass("is-active");
+	});
+
+	$("#closeTransaction").on('click touch',function () {
+		$("#modalTransaction").removeClass("is-active");
+	});
+
+	$("#cancelTransaction").on('click touch',function () {
+		$("#modalTransaction").removeClass("is-active");
 	});
 };
 

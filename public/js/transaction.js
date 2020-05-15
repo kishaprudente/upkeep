@@ -87,16 +87,21 @@ $(document).ready(function () {
 			const transContainer = $("<div>");
 			transContainer.addClass("card");
 			transContainer.attr("data-id", transaction.id);
+			
 
-			const transCardHeader = $("<div>");
+			const transCardHeader = $("<header>");
 			transCardHeader.addClass("card-header");
+			transCardHeader.addClass(transaction.purpose);
 			const transTitle = $("<p>");
 			transTitle.addClass("card-header-title");
-			transTitle.text(transaction.purpose);
+			transTitle.attr("id", "titleCard");
+			var numberWithCommas = (transaction.amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+			transTitle.text(transaction.purpose + ": $" + numberWithCommas);
 
-			const transAmount = $("<p>");
-			transAmount.addClass("subtitle");
-			transAmount.text("$" + transaction.amount);
+			// const transAmount = $("<p>");
+			// transAmount.addClass("subtitle");
+			// transAmount.attr("")
+			// transAmount.text("$" + transaction.amount);
 
 			const transCardContent = $("<div>");
 			transCardContent.addClass("card-content");
@@ -112,7 +117,7 @@ $(document).ready(function () {
 			deleteTransBtn.text("Delete");
 
 			transCardHeader.append(transTitle);
-			transCardHeader.append(transAmount);
+			// transCardHeader.append(transAmount);
 			transCardContent.append(transNote);
 			transFooter.append(deleteTransBtn);
 			transContainer.append(transCardHeader);
