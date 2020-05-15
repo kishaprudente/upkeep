@@ -1,4 +1,5 @@
 /* eslint-disable indent */
+// eslint-disable-next-line no-unused-vars
 class Dashboard {
 	async getUserId() {
 		try {
@@ -35,7 +36,6 @@ class Dashboard {
 		let savings = 0;
 		let personal = 0;
 		let misc = 0;
-		console.log(rent);
 		transactions.forEach((transaction) => {
 			// eslint-disable-next-line default-case
 			if (transaction.purpose === "Food") {
