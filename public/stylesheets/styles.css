@@ -1,6 +1,6 @@
-html{
-    width: 100%;
-    height: 100%;
+html {
+	width: 100%;
+	height: 100%;
 }
 body {
 	overflow: hidden;
@@ -12,25 +12,39 @@ body {
 	-webkit-animation: gradientAnimation 0s ease infinite;
 	-moz-animation: gradientAnimation 0s ease infinite;
 	animation: gradientAnimation 0s ease infinite;
-
-
-	
-
 }
 @-webkit-keyframes gradientAnimation {
-    0%{background-position:67% 0%}
-    50%{background-position:34% 100%}
-    100%{background-position:67% 0%}
+	0% {
+		background-position: 67% 0%;
+	}
+	50% {
+		background-position: 34% 100%;
+	}
+	100% {
+		background-position: 67% 0%;
+	}
 }
 @-moz-keyframes gradientAnimation {
-    0%{background-position:67% 0%}
-    50%{background-position:34% 100%}
-    100%{background-position:67% 0%}
+	0% {
+		background-position: 67% 0%;
+	}
+	50% {
+		background-position: 34% 100%;
+	}
+	100% {
+		background-position: 67% 0%;
+	}
 }
 @keyframes gradientAnimation {
-    0%{background-position:67% 0%}
-    50%{background-position:34% 100%}
-    100%{background-position:67% 0%}
+	0% {
+		background-position: 67% 0%;
+	}
+	50% {
+		background-position: 34% 100%;
+	}
+	100% {
+		background-position: 67% 0%;
+	}
 }
 
 .centerDonut {
@@ -67,12 +81,12 @@ body {
 	width: auto;
 }
 
-#about{
-    top: 12%;
+#about {
+	top: 12%;
 	background-color: hsl(217, 71%, 53%);
 }
 #mySidenav a {
-	position: absolute; 
+	position: absolute;
 	left: -70px; /* Position them outside of the screen */
 	transition: 0.3s; /* Add transition on hover */
 	padding: 15px; /* 15px padding */
@@ -109,12 +123,10 @@ body {
 	background-color: darkBlue;
 }
 element.style {
-    display: block;
-    height: 478px;
-    width: 960px;
+	display: block;
+	height: 478px;
+	width: 960px;
 }
-
-
 
 #mySide a {
 	position: absolute; /* Position them relative to the browser window */
@@ -127,16 +139,16 @@ element.style {
 	color: white; /* White text color */
 	border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
 }
-#position{
-    top: 36%;
+#position {
+	top: 36%;
 	background-color: hsl(123, 75%, 36%);
 }
 #mySide a:hover {
 	left: 0; /* On mouse-over, make the elements appear as they should */
 }
 .label:not(:last-child) {
-    margin-bottom: 0.5em;
-    margin-top: 20px;
+	margin-bottom: 0.5em;
+	margin-top: 20px;
 }
 
 .modal-card-foot {
@@ -147,15 +159,7 @@ element.style {
 	width: 100vw;
 }
 
-@media only screen 
-  and (min-device-width: 370px) 
-  and (max-device-width: 815px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
-
-	
-	
+@media only screen and (min-device-width: 370px) and (max-device-width: 815px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 	#navBar {
 		display: none;
 	}
@@ -166,7 +170,7 @@ element.style {
 	}
 
 	#mySidenav a {
-		position: absolute; 
+		position: absolute;
 		pointer-events: auto;
 		left: 5vw; /* Position them outside of the screen */
 		transition: 0.3s; /* Add transition on hover */
@@ -189,9 +193,8 @@ element.style {
 		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
 	}
 
-	
 	#mySide a {
-		position: absolute; 
+		position: absolute;
 		pointer-events: auto;
 		left: 5vw; /* Position them outside of the screen */
 		transition: 0.3s; /* Add transition on hover */
@@ -213,8 +216,8 @@ element.style {
 		box-shadow: 0px 8px 15px rgba(90, 90, 90, 0.6);
 	}
 
-	#transactionSideButton a{
-		position: absolute; 
+	#transactionSideButton a {
+		position: absolute;
 		pointer-events: auto;
 		right: 3vw; /* Position them outside of the screen */
 		transition: 0.3s; /* Add transition on hover */
@@ -244,7 +247,7 @@ element.style {
 		width: 50vw;
 	}
 	#logoutButton {
-		position: absolute; 
+		position: absolute;
 		pointer-events: auto;
 		right: 7vw; /* Position them outside of the screen */
 		transition: 0.3s; /* Add transition on hover */
@@ -269,12 +272,12 @@ element.style {
 	#logoutButtonContainer {
 		display: inline-block;
 	}
-	
+
 	#logoutText {
-		color: black;
+		color: white;
 		float: right;
 	}
-	
+
 	#transactionContainer {
 		width: 50vw;
 	}
@@ -284,18 +287,16 @@ element.style {
 	}
 
 	#viewText {
-
 		float: right;
 	}
 
-
 	#budget {
-		width: 33%;;
+		width: 33%;
 	}
 
 	#cancelTransaction {
 		width: 33%;
-		background-color: lightgray ;
+		background-color: lightgray;
 	}
 
 	#transactionFooter {
@@ -313,7 +314,7 @@ element.style {
 		align-items: center;
 	}
 	.card-header-title {
-		display: inline;	
+		display: inline;
 		text-align: center;
 		color: white;
 		font-weight: bolder;
@@ -333,7 +334,7 @@ element.style {
 	#panelHead {
 		background-color: darkblue;
 	}
-	
+
 	.card {
 		width: 70vw;
 		margin: 10px;
@@ -385,21 +386,14 @@ element.style {
 	border-radius: 10px;
 }
 #donutContainer {
-	position: relative; 
-	height:91vh;
-	 width:91vw;
-
+	position: relative;
+	height: 91vh;
+	width: 91vw;
 }
-@media screen 
-  and (min-device-width: 1200px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
+@media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
 	#donutContainer {
-		position: relative; 
-		height:80vh;
-		 width:80vw;
+		position: relative;
+		height: 80vh;
+		width: 80vw;
 	}
-	
-	
- 
 }

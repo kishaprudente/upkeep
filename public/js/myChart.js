@@ -112,7 +112,7 @@ var rangeSlider = function () {
 			// total += rentValue;
 			total = rentValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "rent") {
+				if (valueArray[i][0].id.slice(0, -5) !== "rent") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -135,7 +135,7 @@ var rangeSlider = function () {
 			foodValue = ui.value;
 			total = foodValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "food") {
+				if (valueArray[i][0].id.slice(0, -5) !== "food") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -156,7 +156,7 @@ var rangeSlider = function () {
 			utilitiesValue = ui.value;
 			total = utilitiesValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "utilities") {
+				if (valueArray[i][0].id.slice(0, -5) !== "utilities") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -178,7 +178,7 @@ var rangeSlider = function () {
 			savingsValue = ui.value;
 			total = savingsValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "savings") {
+				if (valueArray[i][0].id.slice(0, -5) !== "savings") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -200,7 +200,7 @@ var rangeSlider = function () {
 			personalValue = ui.value;
 			total = personalValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "personal") {
+				if (valueArray[i][0].id.slice(0, -5) !== "personal") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -222,7 +222,7 @@ var rangeSlider = function () {
 			miscellValue = ui.value;
 			total = miscellValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "miscell") {
+				if (valueArray[i][0].id.slice(0, -5) !== "miscell") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
