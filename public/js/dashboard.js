@@ -59,6 +59,35 @@ class Dashboard {
 		});
 		return [rent, food, utils, savings, personal, misc];
 	}
+
+	async displayTotalBudget() {
+		try {
+			await $.get("/api/budgets", function (data) {
+				console.log(data);
+				console.log(data[0].total);
+				outerDonut.options.title.text =
+					"$" +
+					data[0].total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			});
+		} catch (err) {
+			throw new err();
+		}
+		console.log(outerDonut.options.title.text);
+	}
+
+	async getBudget() {
+		try {
+			const user = await this.getUserId();
+			const allBudgets = await $.get("/api/transactions/");
+			const userBudget = allBudgets.filter(
+				(budget) => budget.UserId === user
+			);
+			console.log(userBudget);
+			return userBudget;
+		} catch {
+			throw new Error("Cant get all transactions");
+		}
+	}
 }
 
 // export default Dashboard;

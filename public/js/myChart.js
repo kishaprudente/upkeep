@@ -1,4 +1,3 @@
-// const Dashboard = require("./dashboard");
 // eslint-disable-next-line no-unused-vars
 const dash = new Dashboard();
 
@@ -49,6 +48,7 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 	options: {
 		responsive: true,
 		title: {
+			fontSize: 20,
 			display: true,
 			text: "Monthly Budget",
 			fontColor: "black",
@@ -108,7 +108,7 @@ var rangeSlider = function () {
 			// total += rentValue;
 			total = rentValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "rent") {
+				if (valueArray[i][0].id.slice(0, -5) !== "rent") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -131,7 +131,7 @@ var rangeSlider = function () {
 			foodValue = ui.value;
 			total = foodValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "food") {
+				if (valueArray[i][0].id.slice(0, -5) !== "food") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -152,7 +152,7 @@ var rangeSlider = function () {
 			utilitiesValue = ui.value;
 			total = utilitiesValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "utilities") {
+				if (valueArray[i][0].id.slice(0, -5) !== "utilities") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -174,7 +174,7 @@ var rangeSlider = function () {
 			savingsValue = ui.value;
 			total = savingsValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "savings") {
+				if (valueArray[i][0].id.slice(0, -5) !== "savings") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -196,7 +196,7 @@ var rangeSlider = function () {
 			personalValue = ui.value;
 			total = personalValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "personal") {
+				if (valueArray[i][0].id.slice(0, -5) !== "personal") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -218,7 +218,7 @@ var rangeSlider = function () {
 			miscellValue = ui.value;
 			total = miscellValue;
 			for (let i = 0; i < valueArray.length; i++) {
-				if (valueArray[i][0].id.slice(0, -5) != "miscell") {
+				if (valueArray[i][0].id.slice(0, -5) !== "miscell") {
 					total += parseInt(valueArray[i][0].textContent);
 				}
 			}
@@ -233,9 +233,6 @@ var rangeSlider = function () {
 	//--------------------------SAVE----------------------------------------
 	$saveButton.click(function () {
 		// console.log("BUDGET IS: " + budget);
-		outerDonut.data.datasets[0].data[outerArray.length - 1] = budget;
-		// // console.log(outerDonut.data.datasets[0].data);
-
 		//----------------Budget---------------------------
 		outerDonut.data.datasets[0].data[outerArray.length - 1] = budget;
 		outerDonut.update();
@@ -315,19 +312,5 @@ var rangeSlider = function () {
 rangeSlider();
 
 $(document).ready(function () {
-	async function displayTotalBudget() {
-		try {
-			await $.get("/api/budgets", function (data) {
-				console.log(data);
-				console.log(data[0].balance);
-				outerDonut.options.title.text =
-					"$" +
-					data[0].balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			});
-		} catch (err) {
-			throw new err();
-		}
-		console.log(outerDonut.options.title.text);
-	}
-	displayTotalBudget();
+	dash.displayTotalBudget();
 });
