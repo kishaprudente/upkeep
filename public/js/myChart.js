@@ -6,9 +6,10 @@ var outerDonut = new Chart(document.getElementById("doughnut-chart"), {
 		datasets: [
 			{
 				label: "Dollars",
+
 				backgroundColor: [
 					"#85bb65",
-					"#65bb70",
+				    "#65bb70",
 					"#65bb9b",
 					"#bb9b65",
 					"#808080",
