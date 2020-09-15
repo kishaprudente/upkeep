@@ -8,7 +8,7 @@ upkeep is a budgeting app that allows users to set goals for dividing their mont
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Contact](#contact)
+- [Authors](#authors)
 - [License](#license)
 
 ## Installation
